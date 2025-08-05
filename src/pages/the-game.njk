@@ -1,0 +1,74 @@
+---
+permalink: the-game.html
+layout: the-game.njk
+title: The game
+---
+
+{% from "components/table.njk" import table %}
+{% from "components/heading.njk" import heading %}
+
+<div class="container container_preference">
+  <div class="promotions">
+    <div class="promotions__heading">
+      {{ heading(
+        title = 'Promotions',
+        icon = 'icon_gift',
+        iconSize = 'icon_18',
+        iconAccent = true
+      ) }}
+    </div>
+    <div class="promotions__body">
+      <div class="promotions__items">
+        {% set items = [
+          {
+            title: 'Daily Races',
+            subtitle: 'Play in our&ensp;<span style="color:#9F1942;">$100,000</span>&ensp;Daily Race',
+            imageName: 'rocket'
+          },
+          {
+            title: 'Conquer the Casino',
+            subtitle: 'Win a there in&ensp;<span style="color:#9F1942;">$50,000</span>&ensp;every week',
+            imageName: 'crown'
+          },
+          {
+            title: 'Weekly Raffie',
+            subtitle: 'Share in $75 eath weekly',
+            imageName: 'tickets'
+          }
+        ] %}
+        {% for item in items %}
+          <div class="promotions__item">
+            <div class="promotions__tag">Какой-то текст</div>
+            <div class="promotions__title">{{ item.title }}</div>
+            <div class="promotions__subtitle">{{ item.subtitle | safe }}</div>
+            <a href="#" class="promotions__more">Read more</a>
+            <a href="#" class="btn btn_promotions">
+              <span class="btn__text">Race now</span>
+            </a>
+            <img src="/assets/images/promotions/{{ item.imageName }}.png" alt="" class="promotions__img">
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container container_preference" style="margin-bottom:80px">
+  {{ heading(
+    title = 'The game',
+    icon = 'icon_gamepad',
+    iconSize = 'icon_18',
+    iconAccent = true
+  ) }}
+</div>
+
+
+<div class="container container_preference">
+  {{ table(
+    title = 'Bet History'
+  ) }}
+</div>
+<br>
+{% include "components/preference.njk" %}
+
+

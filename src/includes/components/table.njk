@@ -13,7 +13,7 @@
     {% endif %}
   <div class="table-header">
     <div class="live">live</div>
-    <div class="table__tabs">
+    <div class="table__tabs" role="tablist">
       {% for item in ['MY BETS', 'ALL BETS', 'HIGH ROLLERS', 'COOL MOMENTS'] %}
         <button class="table__tab" type="button" role="tab">{{ item }}</button>
       {% endfor %}
@@ -22,9 +22,11 @@
   <div class="table-wrapper">
     <table class="table">
       <thead>
-        {% for item in ['GAME', 'USER', 'TIME', 'AMOUNT', 'COEFFICIENT', 'PAYOUT'] %}
-          <th>{{ item }}</th>
-        {% endfor %}
+        <tr>
+          {% for item in ['GAME', 'USER', 'TIME', 'AMOUNT', 'COEFFICIENT', 'PAYOUT'] %}
+            <th>{{ item }}</th>
+          {% endfor %}
+        </tr>
       </thead>
       <tbody>
         {% for item in range(0, 10) %}

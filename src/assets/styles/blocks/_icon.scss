@@ -73,7 +73,6 @@
   @include new-icon('play');
   @include new-icon('game-preview');
   @include new-icon('link');
-  @include new-icon('chevron');
   @include new-icon('info');
   @include new-icon('copy');
   @include new-icon('card');
@@ -97,6 +96,14 @@
   @include new-icon('clock');
   @include new-icon('gamepad');
   @include new-icon('coins');
+  @include new-icon('gift');
+  @include new-icon('send');
+  @include new-icon('message');
+  @include new-icon('chevron');
+  @include new-icon('chevron-right') {
+    mask-image: url('../icons/chevron.svg');
+    rotate: -90deg;
+  };
 
   @include new-bg-icon('ethereum');
   @include new-bg-icon('hotspot');

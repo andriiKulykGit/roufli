@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {% include "parts/head.njk" %}
+</head>
+<body>
+  <div class="wrapper wrapper_game" id="wrapper">
+    {% from "components/header.njk" import header %}
+    {{ header() }}
+    <main class="inner">
+      {{ content | safe }}
+    </main>
+    {% include "components/footer.njk" %}
+    <div class="chat">
+      <div class="chat__inner">
+        <div class="chat__header">
+          <button type="button" class="chat__close" id="close-chat">
+            <span class="visually-hidden">hide chat</span>
+            <span class="icon icon_current-color icon_chevron-right icon_24"></span>
+          </button>
+        </div>
+        <div class="chat__body">
+          <div class="chat__flow">
+            {% for item in range(0, 3) %}
+              {% for item in ['#2EE0D1', '#9A5935', '#E9A443', ''] %}
+                <div class="message">
+                  <div class="message__avatar">
+                    <img src="/assets/images/chat/avatar.png" width="25" height="25" alt="" class="message__avatar-img">
+                  </div>
+                  <div class="message__username" style="color:{{item}}">Eterno Graphics</div>
+                  <div class="message__copy">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nisi, provident voluptatibus. Vel aliquid laboriosam quos delectus doloribus. Eos repellat doloribus natus, corrupti dolores doloremque veniam corporis, ullam architecto, laboriosam vitae.</div>
+                  <time datetime="22:42" class="message__time">22:42</time>
+                </div>
+              {% endfor %}
+            {% endfor %}
+          </div>
+          <form action="#" class="chat__controll">
+            <div class="chat__controll-inner">
+              <input type="text" placeholder="Enter a message" class="chat__input">
+              <button type="button" class="chat__send">
+                <span class="icon icon_14 icon_send icon_current-color"></span>
+                <span class="visually-hidden">send the message</span>
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="support">
+      <button type="button" class="support__btn" id="toggle-chat">
+        <span class="visually-hidden"></span>
+        <span class="icon icon_22 icon_message icon_current-color"></span>
+      </button>
+      <button type="button" class="support__btn">
+        <span class="visually-hidden"></span>
+        <span class="icon icon_22 icon_support icon_current-color"></span>
+      </button>
+    </div>
+  </div>
+  {% include "components/popup/deposit.njk" %}
+  {% include "parts/scripts.njk" %}
+</body>
+</html>

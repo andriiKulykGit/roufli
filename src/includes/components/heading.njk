@@ -1,10 +1,14 @@
 {% macro heading(
   title = '',
-  icon = ''
+  icon = 'icon_hotspot',
+  iconSize = 'icon_25',
+  iconAccent = false
 ) %}
   <div class="heading">
     <div class="icon-wrapper icon-wrapper_heading">
-      <span class="icon icon_25 icon_hotspot"></span>
+      <span class="icon {{ iconSize }} {{ icon }}" {% if iconAccent %}
+        style="background-color: var(--accent-color)"
+      {% endif %}></span>
     </div>
     <h2 class="heading__title">
       {{ title }}

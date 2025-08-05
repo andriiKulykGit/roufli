@@ -2,7 +2,6 @@
 
 .after-hero {
   transform: translateY(-50%);
-  margin-bottom: 60px;
 
   &__inner {
     position: relative;
@@ -96,7 +95,7 @@
 
 @media screen and (width < 756px) {
   .after-hero {
-    margin-bottom: 0;
+    margin-bottom: -40px;
 
     &__inner {
       padding: 24px;

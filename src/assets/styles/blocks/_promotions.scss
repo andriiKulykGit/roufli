@@ -1,0 +1,84 @@
+@use '../abstracts/mixins' as *;
+@use '../abstracts/variables' as *;
+
+.promotions {
+  margin-bottom: 35px;
+  margin-top: 24px;
+
+  &__heading {
+    margin-bottom: 28px;
+  }
+
+  &__items {
+    display: grid;
+    gap: 24px 42px;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  }
+
+  &__tag {
+    position: relative;
+    z-index: 2;
+    display: inline-flex;
+    width: fit-content;
+    font-size: 5px;
+    color: #0e0e0e;
+    background-color: #fff;
+    font-weight: 500;
+    padding: 5px;
+    border-radius: 5px;
+    line-height: 1;
+    margin-bottom: 7px;
+  }
+
+  &__item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background-color: #121212;
+    border: 1px solid #242424;
+    border-radius: 16px;
+    padding: 16px;
+    padding-bottom: 12px;
+  }
+
+  &__title {
+    position: relative;
+    z-index: 2;
+    font-size: 18px;
+    line-height: 1.2;
+    margin-bottom: 4px;
+    font-weight: 500;
+    max-width: 128px;
+  }
+
+  &__subtitle {
+    position: relative;
+    z-index: 2;
+    line-height: 1.2;
+    font-size: 12px;
+    color: #7E7E7E;
+    margin-bottom: 4px;
+    max-width: 140px;
+  }
+
+  &__more {
+    position: relative;
+    z-index: 2;
+    font-size: 9px;
+    color: #363636;
+    font-weight: 500;
+    text-decoration: underline;
+    transition: color .1s ease-in-out;
+    margin-bottom: 5px;
+
+    @include hover{
+      color: #7E7E7E;
+    }
+  }
+
+  &__img {
+    position: absolute;
+    bottom: 0;
+    right: -12px;
+  }
+}

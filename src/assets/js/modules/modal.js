@@ -1,4 +1,4 @@
-import { on } from '../helpers/dom.js'
+import { $, on } from '../helpers/dom.js'
 
 export const init = () => {
   on(document, 'click', (e) => {
@@ -18,5 +18,13 @@ export const init = () => {
         modal.close()
       }
     }
+  })
+
+  on($('#toggle-chat'), 'click', (e)=> {
+    $('#wrapper').classList.toggle('is-active')
+  })
+
+  on($('#close-chat'), 'click', (e)=> {
+    $('#wrapper').classList.remove('is-active')
   })
 }

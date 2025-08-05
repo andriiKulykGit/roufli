@@ -2,10 +2,9 @@
 @use '../abstracts/mixins' as *;
 
 .preference {
-  background-color: #121212;
   border: 1px solid #242424;
   border-radius: 22px;
-  background: url('../images/bg-preference.svg') no-repeat;
+  background: #121212 url('../images/bg-preference.svg') no-repeat;
   background-position: bottom 0 right 60px;
 
   &__icon {

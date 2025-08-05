@@ -4,7 +4,7 @@ body {
   font-family: Gotham, system-ui, sans-serif;
   font-size: 16px;
   line-height: 130%;
-  background-color: #0E0E0E;
+  background-color: #0e0e0e;
   color: $text-primary-color;
 }
 
@@ -17,6 +17,24 @@ img {
   display: flex;
   flex-direction: column;
   min-height: 100lvh;
+
+  &_game {
+    display: grid;
+    grid-template-rows: repeat(3, auto);
+    transition: 0.4s grid-template-columns ease-in-out;
+    grid-template-columns: 1fr 0px;
+  }
+
+  &.is-active {
+    grid-template-columns: 1fr 332px;
+
+    .chat__inner {
+      position: fixed;
+      visibility: visible;
+      pointer-events: all;
+      transform: none;
+    }
+  }
 }
 
 .inner {
@@ -29,4 +47,18 @@ img {
 
 .medium {
   font-weight: 500;
+}
+
+@media screen and (width < 1348px) {
+  .wrapper {
+    &_game {
+      display: flex;
+
+      &.is-active {
+        .chat {
+          display: flex;
+        }
+      }
+    }
+  }
 }

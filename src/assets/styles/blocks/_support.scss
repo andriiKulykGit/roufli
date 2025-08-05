@@ -1,0 +1,25 @@
+@use '../abstracts/mixins' as *;
+
+.support {
+  position: fixed;
+  bottom: var(--container-padding);
+  left: var(--container-padding);
+  display: flex;
+  column-gap: 4px;
+
+  &__btn {
+    display: grid;
+    place-items: center;
+    width: 38px;
+    aspect-ratio: 1;
+    background-color: #e81c5a;
+    color: #300713;
+    border-radius: 8px;
+    transition: color .1s ease-in-out, background-color .1s ease-in-out;
+
+    @include hover {
+      background-color: #fff;
+      color: #414141;
+    }
+  }
+}

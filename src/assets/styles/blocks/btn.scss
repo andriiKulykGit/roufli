@@ -124,4 +124,23 @@
       background-color: $accent-color;
     }
   }
+
+  &_promotions {
+    position: relative;
+    z-index: 2;
+    width: fit-content;
+    margin-top: auto;
+    color: #383838;
+    border-radius: 7px;
+    padding: 6px 11px;
+    font-size: 13px;
+    transition: background-color 0.2s ease-in-out, color 0.1s ease-in-out;
+    border: 1px solid #2D2D2D;
+    background-color: #1B1B1B;
+
+    @include hover {
+      color: #fff;
+      background-color: $accent-color;
+    }
+  }
 }
