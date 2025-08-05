@@ -69,6 +69,7 @@
   @include new-size(25);
   @include new-size(30);
 
+  @include new-icon('link');
   @include new-icon('chevron');
   @include new-icon('info');
   @include new-icon('copy');

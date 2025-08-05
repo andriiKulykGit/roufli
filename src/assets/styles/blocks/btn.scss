@@ -6,6 +6,7 @@
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  text-decoration: none;
 
   &__prepend,
   &__append {
@@ -70,6 +71,23 @@
 
     @include hover {
       background-color: #53bd49;
+    }
+  }
+
+  &_header {
+    display: flex;
+    column-gap: 5px;
+    background-color: $accent-color;
+    color: #ffd0de;
+    border-radius: 7px;
+    padding: 9px;
+    font-size: 12px;
+    transition: box-shadow 0.2s ease-in-out, color 0.1s ease-in-out;
+    font-weight: 700;
+
+    @include hover {
+      color: #fff;
+      box-shadow: 0 0 25px 0 rgba(255, 0, 104, 0.5);
     }
   }
 }

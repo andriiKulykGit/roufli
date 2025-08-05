@@ -6,13 +6,14 @@
 <body>
   <div class="wrapper">
     {% from "components/header.njk" import header %}
-    {{ header() }}
+    {{ header(
+      isLogined = false
+    ) }}
     <main class="inner">
       {{ content | safe }}
     </main>
     {% include "components/footer.njk" %}
   </div>
-  {% include "components/popup/deposit.njk" %}
   {% include "parts/scripts.njk" %}
 </body>
 </html>
