@@ -1,0 +1,32 @@
+@use 'variables' as *;
+
+body {
+  font-family: Gotham, system-ui, sans-serif;
+  font-size: 16px;
+  line-height: 130%;
+  background-color: #0E0E0E;
+  color: $text-primary-color;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100lvh;
+}
+
+.inner {
+  flex-grow: 1;
+}
+
+.accent {
+  color: $accent-color;
+}
+
+.medium {
+  font-weight: 500;
+}

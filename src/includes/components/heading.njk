@@ -1,0 +1,13 @@
+{% macro heading(
+  title = '',
+  icon = ''
+) %}
+  <div class="heading">
+    <div class="icon-wrapper icon-wrapper_heading">
+      <span class="icon icon_25 icon_hotspot"></span>
+    </div>
+    <h2 class="heading__title">
+      {{ title }}
+    </h2>
+  </div>
+{% endmacro %}

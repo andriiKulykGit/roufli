@@ -1,0 +1,42 @@
+@use '../abstracts/mixins' as *;
+
+.social {
+  z-index: 2;
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 36px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+  border: 1px solid rgba($color: #fff, $alpha: 0.1);
+  padding: 5px;
+  background-color: rgba($color: #544F52, $alpha: 0.5);
+  border-radius: 100px;
+  backdrop-filter: blur(10px);
+
+  &__link {
+    display: grid;
+    place-items: center;
+    width: 28px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background-color: rgba($color: #565656, $alpha: 0.2);
+    color: rgba($color: #fff, $alpha: 0.2);
+    transition: color .1s ease-in-out;
+
+    @include hover {
+      color: #fff;
+    }
+  }
+}
+
+@media screen and (width < 768px) {
+  .social {
+    right: auto;
+    top: auto;
+    left: 15px;
+    bottom: 15px;
+    transform: none;
+  }
+}

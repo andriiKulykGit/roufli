@@ -1,0 +1,181 @@
+<dialog id="deposit-modal" class="modal">
+  <div class="modal__wrapper">
+    <div class="modal__header">
+      <div class="modal__tabs" role="tablist">
+        <button
+          class="modal__tab"
+          id="tab-modal-deposit"
+          type="button"
+          role="tab"
+          aria-selected="true"
+          aria-controls="tabpanel-modal-deposit"
+        >Deposit</button>
+        <button
+          class="modal__tab"
+          id="tab-modal-withdraw"
+          type="button"
+          role="tab"
+          aria-controls="tabpanel-modal-withdraw"
+        >Withdraw</button>
+        <button
+          class="modal__tab"
+          id="tab-modal-history"
+          type="button"
+          role="tab"
+          aria-controls="tabpanel-modal-history"
+        >History</button>
+      </div>
+      <form method="dialog">
+        <button class="modal__close" type="submit">
+          <span class="icon icon_cross icon_24 icon_current-color"></span>
+          <span class="visually-hidden">close modal window</span>
+        </button>
+      </form>
+    </div>
+    <div class="modal__body">
+      <div class="modal__tabpanel" id="tabpanel-modal-deposit" role="tabpanel" aria-labelledby="tab-modal-deposit">
+        <div class="modal__currencies">
+          {% for item in range(0, 7) %}
+            <label class="modal__currency">
+              <input class="visually-hidden" type="radio" name="currency-deposit"
+                {% if loop.first %}
+                  checked
+                {% endif %}
+              >
+              <span class="icon icon_bitcoin icon_30"></span>
+              <span class="modal__currency-name">BTC</span>
+            </label>
+          {% endfor %}
+        </div>
+        <div class="modal__cols">
+          <label class="input">
+            <span class="input__label">Enter the amount</span>
+            <input type="text" class="input__controll" value="100">
+          </label>
+          <label class="input">
+            <span class="input__label">Get your balance</span>
+            <input type="text" class="input__controll" value="100">
+          </label>
+        </div>
+        <div class="modal__cols modal__cols_qr">
+          <div class="modal__rows">
+            <label class="input">
+              <span class="input__label">Network</span>
+              <select class="input__controll">
+                <option>TRC-20</option>
+                <option>ERC-20</option>
+                <option>BEP-20</option>
+              </select>
+              <span class="input__prepend">
+                <span class="icon icon_current-color icon_planet icon_20"></span>
+              </span>
+              <span class="input__append">
+                <span class="icon icon_current-color icon_chevron icon_20"></span>
+              </span>
+            </label>
+            <div class="input">
+              <label class="input__label" for="wallet">Wallet</label>
+              <input id="wallet" type="text" class="input__controll" value="TV9fdfds5w35rrer3525fsdg" readonly>
+              <label class="input__prepend" for="wallet">
+                <span class="icon icon_current-color icon_wallet icon_20"></span>
+              </label>
+              <button type="button" class="input__append" data-copy="TV9fdfds5w35rrer3525fsdg">
+                <span class="icon icon_current-color icon_copy icon_20"></span>
+                <span class="visually-hidden">copy to clipboard</span>
+              </button>
+            </div>
+          </div>
+          <div class="modal__qr"></div>
+        </div>
+        <div class="modal__footer">
+          <p class="modal__note modal__note_yellow">
+            <span class="icon icon_info icon_current-color icon_18"></span>
+            <span>Payments are accepted on the TRC-20 network</span>
+          </p>
+          <p class="modal__note modal__note_center modal__note_green medium">
+            <span>Your balance will receive: 100 USDT</span>
+          </p>
+          <p class="modal__note">
+            <span class="icon icon_note icon_current-color icon_18"></span>
+            <span>Minimum amount: 5 USDT <br> Scan the QR code or copy the address and send the desired amount. No confirmation required</span>
+          </p>
+        </div>
+      </div>
+      <div class="modal__tabpanel" hidden id="tabpanel-modal-withdraw" role="tabpanel" aria-labelledby="tab-modal-withdraw">
+        <div class="modal__currencies">
+          {% for item in range(0, 7) %}
+            <label class="modal__currency">
+              <input class="visually-hidden" type="radio" name="currency-withdraw"
+                {% if loop.first %}
+                  checked
+                {% endif %}
+              >
+              <span class="icon icon_bitcoin icon_30"></span>
+              <span class="modal__currency-name">BTC</span>
+            </label>
+          {% endfor %}
+        </div>
+        <label class="input">
+          <span class="input__label">Network</span>
+          <select class="input__controll">
+            <option>TRC-20</option>
+            <option>ERC-20</option>
+            <option>BEP-20</option>
+          </select>
+          <span class="input__prepend">
+            <span class="icon icon_current-color icon_planet icon_20"></span>
+          </span>
+          <span class="input__append">
+            <span class="icon icon_current-color icon_chevron icon_20"></span>
+          </span>
+        </label>
+        <div class="modal__cols">
+          <label class="input">
+            <span class="input__label">Enter the amount</span>
+            <input type="text" class="input__controll" value="0">
+            <button type="button" class="input__append input__append_text">
+              <span>max</span>
+            </button>
+          </label>
+          <label class="input">
+            <span class="input__label">Get your balance</span>
+            <input type="text" class="input__controll" value="0">
+            <button type="button" class="input__append input__append_text">
+              <span>max</span>
+            </button>
+          </label>
+        </div>
+        <div class="modal__cols">
+          <div class="input">
+            <label class="input__label" for="wallet">Wallet</label>
+            <input id="wallet" type="text" class="input__controll" placeholder="Enter your wallet">
+            <label class="input__prepend" for="wallet">
+              <span class="icon icon_current-color icon_wallet icon_20"></span>
+            </label>
+            <button type="button" class="input__append" data-copy="TV9fdfds5w35rrer3525fsdg">
+              <span class="icon icon_current-color icon_copy icon_20"></span>
+              <span class="visually-hidden">copy to clipboard</span>
+            </button>
+          </div>
+        </div>
+        <button type="button" class="btn btn_modal">
+          <span class="btn__text">Withdraw funds</span>
+          <span class="icon icon_current-color icon_20 icon_card"></span>
+        </button>
+        <div class="modal__footer">
+          <p class="modal__note modal__note_yellow">
+            <span class="icon icon_info icon_current-color icon_18"></span>
+            <span>Withdrawal fee: 10% + 3USD network fee</span>
+          </p>
+          <p class="modal__note">
+            <span class="icon icon_note icon_current-color icon_18"></span>
+            <span>Minimum amount: 30 USD</span>
+          </p>
+        </div>
+      </div>
+      <div class="modal__tabpanel" hidden id="tabpanel-modal-history" role="tabpanel" aria-labelledby="tab-modal-history">
+        <p>History</p>
+      </div>
+    </div>
+  </div>
+</dialog>

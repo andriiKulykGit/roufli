@@ -1,0 +1,35 @@
+.switch {
+  &__slider {
+    position: relative;
+    display: block;
+    width: 36px;
+    height: 14px;
+    border-radius: 100px;
+    background-color: #323232;
+    border: 1px solid #3A3A3A;
+    transition: background-color 0.2s ease-in-out;
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: -4px;
+      left: -4px;
+      height: calc(100% + 8px);
+      aspect-ratio: 1;
+      border-radius: 50%;
+      background-color: #FFFFFF;
+      transition: transform 0.2s ease-in-out;
+      border: 1px solid #3A3A3A;
+    }
+  }
+
+  &__controll {
+    &:checked + .switch__slider {
+      background-color: #0478FA;
+
+      &:before {
+        transform: translateX(22px);
+      }
+    }
+  }
+}

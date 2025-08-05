@@ -1,0 +1,14 @@
+---
+permalink: index.html
+layout: main.njk
+title: Homepage
+---
+
+{% from "components/table.njk" import table %}
+
+<div class="container">
+  {{ table(
+    title = 'Bet History'
+  ) }}
+</div>
+

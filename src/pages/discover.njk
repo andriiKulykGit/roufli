@@ -1,0 +1,230 @@
+---
+permalink: discover.html
+layout: main.njk
+title: Discover
+---
+
+<ul class="social">
+  <li>
+    <a href="#" class="social__link">
+      <span class="icon icon_current-color icon_16 icon_telegram"></span>
+      <span class="visually-hidden">telegram</span>
+    </a>
+  </li>
+  <li>
+    <a href="#" class="social__link">
+      <span class="icon icon_current-color icon_16 icon_x"></span>
+      <span class="visually-hidden">twitter</span>
+    </a>
+  </li>
+  <li>
+    <a href="#" class="social__link">
+      <span class="icon icon_current-color icon_16 icon_support"></span>
+      <span class="visually-hidden">support</span>
+    </a>
+  </li>
+</ul>
+
+<div class="container">
+  <div class="discover">
+    <aside class="discover__col">
+      <ul class="discover__list">
+        {% for item in[
+          'Terms & Fees',
+          'Privacy',
+          'Coin Mixing',
+          'Project Mirrors & Tor Access',
+          'Deposits & Withdrawals',
+          'Premium Club',
+          'Affiliate Program'
+        ] %}
+          <li>
+            <a href="#{{ item | slugify }}" class="discover__link {% if loop.first %}is-active{% endif %}">{{ item }}</a>
+          </li>
+        {% endfor %}
+      </ul>
+    </aside>
+    <div class="discover__content">
+      <h1 class="visually-hidden">discover</h1>
+      <section class="discover__section" id="terms-and-fees">
+        <h2 class="discover__title">Terms&ensp;<span class="accent">&</span>&ensp;Fees</h2>
+        <p>RoulFi is built on a truly decentralized foundation, ensuring a gaming experience free from centralized oversight. Here’s what you need to know:</p>
+        <br>
+        <p>Betting Fee: We charge a 4.5% fee on the total betting volume. This fee supports the development and maintenance of the platform.</p>
+        <br>
+        <p>Decentralized & Unregulated: RoulFi operates under a fully decentralized model. We have no plans to adopt any centralized regulation, meaning no account bans, no multi-account restrictions, and no identity verification requirements.</p>
+        <br>
+        <p>Privacy First: We do not enforce AML (Anti-Money Laundering) or KYC (Know Your Customer) checks, ensuring complete anonymity for all players.</p>
+        <br>
+        <p>Core Game – Roulette: Our primary game is Roulette, offering a seamless, trustless, and autonomous gaming experience.</p>
+        <br>
+        <p>Chat Content Moderation Only: The only regulation in place is chat moderation to maintain a fair and respectful community. No other restrictions apply.</p>
+        <br>
+        <p>Since 2025: RoulFi has been setting the standard in decentralized gaming since 2025. Your funds. Your rules. No third parties. Just DeFi.</p>
+        <br>
+      </section>
+      <section class="discover__section" id="privacy">
+        <h2 class="discover__title">Privacy</h2>
+        <p>At RoulFi, privacy isn’t just a feature it’s a principle. We are committed to ensuring complete anonymity for our users.</p>
+        <br>
+        <p>- We do not collect, store, or analyze any personal data.</p>
+        <br>
+        <p>- We do not track IP addresses, use cookies for analytics, or attempt to profile users in any way.</p>
+        <br>
+        <p>
+          The only information stored in our databases includes:
+              <br>- Game history
+              <br>- Betting history
+              <br>- Deposit & withdrawal history
+              <br>- Wallet address linked to the account (since registration is done via wallet authentication)
+        </p>
+        <br>
+        <p>Your data is your business, not ours.</p>
+      </section>
+      <section class="discover__section" id="coin-mixing">
+        <h2 class="discover__title">Coin Mixing</h2>
+        <p>RoulFi is not a crypto-mixing service, but we prioritize player security and anonymity.</p>
+        <br>
+        <p>- Withdrawals are processed from shared liquidity pools, ensuring that deposit and withdrawal histories are not directly linked.</p>
+        <br>
+        <p>- This mechanism enhances privacy by making it harder to trace transactions, similar to how crypto mixers function.</p>
+        <br>
+        <p>- However, unlike traditional mixing services, our system is fully transparent and operates autonomously within the decentralized ecosystem.</p>
+        <br>
+        <p>Your funds remain secure, untraceable, and decentralized the way DeFi was meant to be.</p>
+      </section>
+      <section class="discover__section" id="project-mirrors-and-tor-access">
+        <h2 class="discover__title">Project Mirrors & Tor Access</h2>
+        <p>At RoulFi, we embrace true decentralization, but we recognize that our model may face opposition from regulatory forces. To ensure uninterrupted access, we provide an official Tor (Onion) mirror for enhanced privacy and censorship resistance.</p>
+        <br>
+        <p>- Our Tor mirror allows users to access RoulFi securely, even in regions with restrictions.</p>
+        <br>
+        <p>- New mirrors may be introduced as needed to bypass censorship and maintain availability.</p>
+        <br>
+        <p>- We are committed to staying online, regardless of external pressures.</p>
+      </section>
+      <section class="discover__section" id="deposits-and-withdrawals">
+        <h2 class="discover__title">Deposits&ensp;<span class="accent">&</span>&ensp;Withdrawals</h2>
+        <p>At RoulFi, we ensure secure, fast, and private transactions through our automated system.</p>
+        <br>
+        <p>- When making a deposit, a unique wallet address is generated for your account within the same network. This deposit address is permanently linked to your account for future transactions.</p>
+        <br>
+        <p>- Deposits are credited once the system detects full confirmation on the blockchain.</p>
+        <br>
+        <p>- Withdrawals are automated and processed from a shared liquidity pool, enhancing privacy by unlinking deposit and withdrawal histories similar to a crypto mixer.</p>
+        <br>
+        <p>- To withdraw funds, a player must first wager at least 1x the deposit amount to prevent abuse and maintain liquidity.</p>
+      </section>
+      <section class="discover__section" id="premium-club">
+        <h2 class="discover__title">Premium Club</h2>
+        <p>- The RoulFi Premium Club is your ticket to exclusive rewards - designed for players who want more from their DeFi roulette experience</p>
+        <br>
+        <p>- It’s a ranking system that levels up your game - the more you wager, the better the perks you unlock</p>
+        <br>
+        <p>- From lower commissions to weekly cashback and project influence - each rank brings benefits tailored for true rollers</p>
+        <br>
+        <p>- Whether you’re here to play big or build with us - Premium Club is your way to get ahead in RoulFi</p>
+        <br>
+        <br>
+        <p>Curious about the ranks? Check out the full breakdown below - your journey starts now:</p>
+        <br>
+        <p>
+          <span class="medium">No Rank</span> (Pre-Bronze)
+  <br>
+          <br>
+  Restrictions:
+  <br>- No ability to set an avatar
+  <br>- No ability to set a nickname
+  <br>- No access to the general site chat
+  - No access to the live feed of the overall betting history on the site
+</p>
+        <br>
+        <p>
+          <span class="medium" style="color: #9A5935">Bronze</span> ($5,000 total wagered)
+  <br>
+          <br>
+  Base Features:
+  <br>- Set an avatar
+  <br>- Set a nickname
+  <br>- Access to the general chat
+  <br>- Access to the live feed of the overall betting history on the site
+</p>
+        <br>
+        <p>
+          <span class="medium" style="color: #E5E4E2">Silver</span> ($25,000 total wagered)
+  <br><br>
+  Base Features:
+  <br>- Option to play anonymously (game history hidden)
+  <br>- Monthly rakeback: 1% of the commission from your betting volume
+  <br><br>
+  Additional:
+  <br>- Anonymous mode in chat (nickname hidden from other players)
+  <br>- One-time bonus for reaching the rank: 1% of the first deposit amount after achieving Silver
+</p>
+        <br>
+        <p>
+          <span class="medium" style="color: #E9A443">Gold</span> ($75,000 total wagered)
+  <br><br>
+  Base Features:
+  <br>- Choice of withdrawal currency (any token for withdrawing winnings)
+  <br>- Weekly cashback: 5% of the volume of lost funds
+  <br>- Monthly rakeback: 1.5% of your betting volume commissions
+  <br>- Reduced commission: 4% instead of 4.5%
+
+  Additional:
+  <br>- Priority support (response within 24 hours)
+  <br>- One-time bonus for reaching the rank: 1% of the first deposit amount after achieving Gold
+</p>
+        <br>
+        <p>
+          <span class="medium" style="color: #E8E8E8">Platinum</span> ($200,000 total wagered)
+  <br><br>
+  Base Features:
+  <br>- Reduced commission: 3.5% instead of 4.5%
+  <br>- Weekly cashback: 7.5% of the volume of lost funds
+  <br>- Monthly rakeback: 2% of your betting volume commissions
+
+  Additional:
+  <br>- One-time bonus for reaching the rank: 1% of the first deposit amount after achieving Platinum
+</p>
+        <br>
+        <p>
+          <span class="medium" style="color: #2EE0D1">Diamond</span> ($1,000,000 total wagered)
+  <br><br>
+  Base Features:
+  <br>- Reduced commission: 3% instead of 4.5%
+  <br>- Weekly cashback: 8.5% of the volume of lost funds
+  <br>- Monthly rakeback: 2% of your betting volume commissions
+  <br>- Permanent deposit bonus: 2.5%
+  <br>
+          <br>
+  Additional:
+  <br>- Share of project profits: 0.1% of the total commission pool distributed among Elite players quarterly to their balance
+  <br>- One-time bonus for reaching the rank: 1% of the first deposit amount after achieving Elite (stacks with the permanent 3.5% bonus, totaling 4.5% on the first deposit after reaching the rank)
+</p>
+        <br>
+        <p>
+          <span class="medium" style="color: #E92B2E">Elite</span> ($5,000,000 total wagered)
+  <br><br>
+  Base Features:
+  <br>- Reduced commission: 2% instead of 4.5%
+  <br>- Weekly cashback: 10% of the volume of lost funds
+  <br>- Monthly rakeback: 3% of your betting volume commissions
+  <br>- Permanent deposit bonus: 3.5%
+  <br>- Ability to vote and propose plans for project improvements
+  <br>- Participation in project development
+  <br>- Access to a chat with the project team
+  <br>
+          <br>
+  Additional:
+  <br>- Share of project profits: 0.1% of the total commission pool distributed among Elite players quarterly to their balance
+  <br>- One-time bonus for reaching the rank: 1% of the first deposit amount after achieving Elite (stacks with the permanent 3.5% bonus, totaling 4.5% on the first deposit after reaching the rank)
+</p>
+      </section>
+      <section class="discover__section" id="affiliate-program">
+        <h2 class="discover__title">Affiliate Program</h2>
+        <p>Content for the affiliate program will be added here soon.</p>
+      </section>
+    </div>
+  </div>
+</div>

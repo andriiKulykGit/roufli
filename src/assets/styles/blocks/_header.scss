@@ -1,0 +1,270 @@
+@use '../abstracts/mixins' as *;
+@use '../abstracts/variables' as *;
+
+.header {
+  margin-top: 32px;
+
+  &__avatar {
+    &-img {
+      display: block;
+      height: 46px;
+      width: 46px;
+      border-radius: 8px;
+      border: 1px solid $accent-color;
+    }
+  }
+
+  &__menu {
+  }
+
+  &__inner {
+    display: flex;
+    column-gap: 20px;
+    align-items: center;
+    padding: 14px 24px;
+    border-radius: 22px;
+    background-color: #161616;
+  }
+
+  &__online {
+    color: #36a764;
+    display: inline-grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto;
+    column-gap: 6px;
+
+    &-icon {
+      display: flex;
+      align-items: center;
+      grid-row: span 2;
+    }
+
+    &-value {
+      font-size: 13px;
+      font-weight: 700;
+      line-height: 1;
+    }
+
+    &-label {
+      font-size: 9px;
+      line-height: 1;
+    }
+  }
+
+  &__actions {
+    display: flex;
+    column-gap: 8px;
+    align-items: center;
+    margin-left: auto;
+  }
+}
+
+.menu {
+  display: flex;
+  column-gap: 18px;
+
+  &__item {
+  }
+
+  &__link {
+    position: relative;
+    text-decoration: none;
+    font-size: 13px;
+    line-height: 1;
+    color: inherit;
+
+    &:before {
+      content: '';
+      display: inline-block;
+      width: 100%;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      transform: scaleX(0);
+      transform-origin: right;
+      height: 1px;
+      background-color: $accent-color;
+      transition: transform 0.2s ease-in-out;
+    }
+
+    @include hover {
+      &:before {
+        transform: scaleX(1);
+        transform-origin: left;
+      }
+    }
+  }
+}
+
+.balance {
+  display: flex;
+  align-items: center;
+  padding: 8px 16px;
+  background-image: linear-gradient(90deg, #1d1d1d, #5f1028);
+  border-radius: 12px;
+
+  &__icon {
+    display: flex;
+  }
+
+  &__count {
+    font-weight: 500;
+    line-height: 1;
+    color: inherit;
+    font-size: 14px;
+  }
+
+  &__action {
+    margin-left: 10px;
+  }
+}
+
+.burger {
+  height: 46px;
+  width: 46px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px 6px;
+  justify-content: space-between;
+  cursor: pointer;
+
+  & > span:not([class]) {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: #fff;
+    position: relative;
+    transition: opacity 0.1s ease-in-out, transform 0.1s ease-in-out;
+    transform-origin: right;
+  }
+
+  &[aria-expanded='true'] {
+    span {
+      &:nth-child(1) {
+        transform: rotate(-45deg);
+      }
+      &:nth-child(2) {
+        opacity: 0;
+      }
+      &:nth-child(3) {
+        transform: rotate(45deg);
+      }
+    }
+  }
+}
+
+@media screen and (width >= 780px) {
+  .burger {
+    display: none;
+  }
+}
+
+@media screen and (width < 780px) {
+  .menu {
+    display: flex;
+    flex-direction: column;
+    width: 160px;
+    background-color: #121212;
+
+    &__item {
+      &:not(:last-of-type) {
+        border-bottom: 1px solid #262626;
+      }
+    }
+
+    &__link {
+      display: flex;
+      padding: 8px 10px;
+      font-size: 9px;
+
+      @include hover {
+        background-color: #202020;
+      }
+
+      &:before {
+        content: none;
+      }
+    }
+  }
+
+  .header {
+    margin-top: var(--container-padding);
+
+    &__inner {
+      column-gap: 8px;
+    }
+
+    &__menu {
+      display: none;
+    }
+
+    &__logo {
+      &-img {
+        width: 46px;
+      }
+    }
+  }
+}
+
+@media screen and (width < 600px) {
+  .header {
+    margin-top: 0;
+
+    &__inner {
+      padding: 12px;
+      border-radius: 0;
+    }
+  }
+
+  .balance {
+    padding: 8px;
+  }
+  .container {
+    &_header {
+      display: contents;
+    }
+  }
+}
+
+@media screen and (width < 480px) {
+  .btn {
+    &_balance {
+      padding: 6px;
+      aspect-ratio: 1;
+
+      .btn__text {
+        display: none;
+      }
+    }
+  }
+
+  .balance {
+    padding: 6px;
+
+    &__action {
+      margin-left: 6px;
+    }
+  }
+
+  .header {
+    &__avatar {
+      &-img {
+        width: 42px;
+        height: 42px;
+      }
+    }
+
+    &__online {
+      column-gap: 3px;
+    }
+  }
+}
+
+@media screen and (width < 400px) {
+  .header {
+    &__online {
+      display: none;
+    }
+  }
+}

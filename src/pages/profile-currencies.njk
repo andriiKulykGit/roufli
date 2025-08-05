@@ -1,0 +1,54 @@
+---
+permalink: profile-currencies.html
+layout: profile.njk
+title: Profile
+---
+
+<div class="profile__title">Currencies</div>
+<div class="profile__subtitle">Active balances</div>
+<div class="profile__items">
+  <div class="profile__item">
+    <div class="profile__left">
+      <div class="icon-wrapper icon-wrapper_profile"></div>
+      <span class="medium">Demo Balance (DEM)</span>
+    </div>
+    <div class="profile__right">
+      <span class="medium">0.00 D</span>
+      <button type="button" class="btn btn_2fa btn_disabled">
+        <span class="btn__text nowrap">Disable</span>
+      </button>
+    </div>
+  </div>
+  <div class="profile__item">
+    <div class="profile__left">
+      <div class="icon-wrapper icon-wrapper_profile"></div>
+      <span class="medium">LiteCoin (LTC)</span>
+    </div>
+    <div class="profile__right">
+      <span class="medium">0.0000000 LTC</span>
+      <button type="button" class="btn btn_2fa btn_disabled">
+        <span class="btn__text nowrap">Disable</span>
+      </button>
+    </div>
+  </div>
+</div>
+<div class="profile__subtitle">Cryptocurrencies</div>
+<div class="profile__items">
+  {% for item in range(0, 4) %}
+    <div class="profile__item">
+      <div class="profile__left">
+        <div class="icon-wrapper icon-wrapper_profile">
+          <span class="icon icon_18 icon_bitcoin"></span>
+        </div>
+        <span class="medium">BitCoin (BTC)</span>
+      </div>
+      <div class="profile__right">
+        <span class="medium">0.0000000</span>
+        <span class="icon icon_18 icon_bitcoin"></span>
+        <button type="button" class="btn btn_2fa">
+          <span class="btn__text nowrap">Add</span>
+        </button>
+      </div>
+    </div>
+  {% endfor %}
+</div>

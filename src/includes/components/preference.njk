@@ -1,0 +1,34 @@
+<div class="container container_preference">
+  <div class="preference">
+    <ul class="preference__list">
+      {% set items = [
+        {
+          icon: "planet",
+          value: "2 222 222",
+          label: "TOTAL PLAYERS"
+        }, {
+          icon: "people",
+          value: "650",
+          label: "PLAYERS TODAY"
+        }, {
+          icon: "gamepad",
+          value: "83 324 424 5325",
+          label: "GAMES PLAYED"
+        }, {
+          icon: "coins",
+          value: "$1 789 320 054",
+          label: "TOTAL WERGERED"
+        }
+      ] %}
+      {% for item in items %}
+        <li class="preference__item">
+          <div class="preference__icon">
+            <span class="icon icon_25 icon_current-color icon_{{ item.icon }}"></span>
+          </div>
+          <div class="preference__value">{{ item.value }}</div>
+          <div class="preference__label">{{ item.label }}</div>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+</div>

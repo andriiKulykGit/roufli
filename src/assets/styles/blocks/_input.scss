@@ -1,0 +1,77 @@
+@use '../abstracts/mixins' as *;
+
+.input {
+  position: relative;
+  display: flex;
+  row-gap: 8px;
+  flex-direction: column;
+
+  &__controll {
+    padding: 16px 20px;
+    border-radius: 12px;
+    background-color: #1e1e1e;
+    border: 1px solid #2C2C2C;
+    color: #4F4F4F;
+    font-size: 20px;
+    line-height: 1.2;
+    font-weight: 500;
+
+    &:is(select) {
+      appearance: none;
+    }
+
+    &:has(~ .input__prepend) {
+      padding-left: 48px;
+    }
+
+    &:has(~ .input__append) {
+      padding-right: 48px;
+    }
+  }
+
+  &__label {
+    font-weight: 500;
+    font-size: 15px;
+    color: #353535;
+  }
+
+  &__prepend {
+    display: flex;
+    position: absolute;
+    left: 20px;
+    bottom: 20px;
+    color: #878787;
+  }
+
+  &__append {
+    display: flex;
+    color: #3a3a3a;
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    transition: background-color .1s ease-in-out;
+    border-radius: 4px;
+
+    &:is(button) {
+      padding: 4px;
+      transform: translate(4px, 4px);
+      @include hover {
+        background-color: rgba($color: #3a3a3a, $alpha: 0.2);
+      }
+    }
+
+    &_text {
+      background-color: #333333;
+      color: #9c9c9c;
+      font-weight: 500;
+      font-size: 10px;
+      right: 12px;
+
+      &:is(button) {
+        padding: 5px 8px;
+        transform: none;
+
+      }
+    }
+  }
+}

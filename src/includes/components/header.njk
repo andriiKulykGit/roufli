@@ -1,0 +1,114 @@
+{% from "components/button.njk" import button %}
+
+<header class="header">
+  <div class="container container_header">
+    <div class="header__inner">
+      <a href="/" class="header__logo">
+        <img src="/assets/images/logo.svg" width="58" height="63" alt="logo" class="header__logo-img">
+      </a>
+      <aside class="header__online">
+        <div class="header__online-icon">
+          <span class="icon icon_25 icon_hotspot-green"></span>
+        </div>
+        <div class="header__online-value">1658</div>
+        <div class="header__online-label">ONLINE</div>
+      </aside>
+      <nav class="header__menu">
+        <ul class="menu">
+          <li class="menu__item">
+            <a href="#" class="menu__link">The Game</a>
+          </li>
+          <li class="menu__item">
+            <a href="/discover.html" class="menu__link">Discover</a>
+          </li>
+          <li class="menu__item">
+            <a href="#" class="menu__link">Promotions</a>
+          </li>
+        </ul>
+      </nav>
+      <div class="header__actions">
+        <div class="header__balance">
+          <div class="balance">
+            <div class="balance__icon">
+              <span class="icon icon_ethereum icon_23"></span>
+            </div>
+            <div class="balance__count">1.435454</div>
+            <div class="balance__action">
+              <button
+                type="button"
+                class="btn btn_balance"
+                class="btn"
+                aria-haspopup="dialog"
+                aria-controls="deposit-modal">
+                <span class="btn__prepend">
+                  <span class="icon icon_current-color icon_wallet icon_14"></span>
+                </span>
+                <span class="btn__text">Deposit</span>
+              </button>
+            </div>
+          </div>
+        </div>
+        <span class="header__avatar-wrapper">
+          <a href="#" class="header__avatar">
+            <img src="/assets/images/avatar_placeholder.jpg" alt="User name" width="44" height="44" class="header__avatar-img">
+          </a>
+        </span>
+        <button type="button" class="burger">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span class="visually-hidden">toggle nav menu</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<template id="avatar-dropdowm">
+  <div class="dropdown">
+    <div class="dropdown__header">
+      <div class="dropdown__avatar">
+        <img src="/assets/images/avatar_placeholder.jpg" alt="User name" width="16" height="16" class="dropdown__avatar-img">
+      </div>
+      <div>NameProfile</div>
+    </div>
+    <ul class="dropdown__list">
+      <li>
+        <a href="/profile-settings.html" class="dropdown__link">
+          <span class="icon icon_current-color icon_12 icon_settings"></span>
+          <span>Settings</span>
+        </a>
+      </li>
+      <li>
+        <a href="#" class="dropdown__link">
+          <span class="icon icon_current-color icon_12 icon_ranks"></span>
+          <span>Ranks</span>
+        </a>
+      </li>
+      <li>
+        <a href="#" class="dropdown__link">
+          <span class="icon icon_current-color icon_12 icon_affiliate"></span>
+          <span>Affiliate</span>
+        </a>
+      </li>
+      <li>
+        <a href="#" class="dropdown__link">
+          <span class="icon icon_current-color icon_12 icon_game-history"></span>
+          <span>Game history</span>
+        </a>
+      </li>
+      <li>
+        <a href="#" class="dropdown__link">
+          <span class="icon icon_current-color icon_12 icon_transactions"></span>
+          <span>Transactions</span>
+        </a>
+      </li>
+      <li>
+        <a href="#" class="dropdown__link dropdown__link_danger">
+          <span class="icon icon_current-color icon_12 icon_disconnect"></span>
+          <span>Disconnect</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</template>

@@ -1,0 +1,70 @@
+<footer class="footer">
+  <div class="container">
+    <div class="footer__inner">
+      <div class="footer__content">
+        <div class="footer__col footer__col_summary">
+          <img src="/assets/images/logo-footer.svg" alt="roufli logo" class="footer__logo" width="42" height="42">
+          <div>
+            <div class="footer__copyright">© 2025 RoulFi</div>
+            <div>Decentralized & Anonymous</div>
+          </div>
+        </div>
+        <p class="footer__col footer__col_copy">
+          RoulFI is commited to a decentralized approach to gambling
+        </p>
+        <div class="footer__col footer__col_links">
+          <ul class="footer__links">
+            {% for item in ['Privacy Policy', 'Contact', 'Trust', 'Tor Mirror'] %}
+            <li>
+              <a href="#" class="footer__link">{{ item }}</a>
+            </li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+      <section class="contents">
+        <h3 class="visually-hidden">we accept cryptocurrency</h3>
+        <ul class="footer__partners">
+          <li>
+            <span class="footer__partner footer__partner_bitcoin"></span>
+            <span class="visually-hidden">bitcoin</span>
+          </li>
+          <li>
+            <span class="footer__partner footer__partner_litecoin"></span>
+            <span class="visually-hidden">litecoin</span>
+          </li>
+          <li>
+            <span class="footer__partner footer__partner_ethereum"></span>
+            <span class="visually-hidden">ethereum</span>
+          </li>
+          <li>
+            <span class="footer__partner footer__partner_tron"></span>
+            <span class="visually-hidden">tron</span>
+          </li>
+          <li>
+            <span class="footer__partner footer__partner_tether"></span>
+            <span class="visually-hidden">tether</span>
+          </li>
+          <li>
+            <span class="footer__partner footer__partner_solana"></span>
+            <span class="visually-hidden">solana</span>
+          </li>
+          <li>
+            <span class="footer__partner footer__partner_monero"></span>
+            <span class="visually-hidden">monero</span>
+          </li>
+          <li>
+            <span class="footer__partner footer__partner_walletconnect"></span>
+            <span class="visually-hidden">wallet connect</span>
+          </li>
+          <li>
+            <span class="footer__partner footer__partner_tor"></span>
+            <span class="visually-hidden">tor</span>
+          </li>
+        </ul>
+      </section>
+    </div>
+  </div>
+</footer>
+
+{% include "components/popup/deposit.njk" %}

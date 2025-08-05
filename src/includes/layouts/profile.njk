@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {% include "parts/head.njk" %}
+</head>
+<body>
+  <div class="wrapper">
+    {% include "components/header.njk" %}
+    <main class="inner">
+      <div class="container">
+        <div class="profile">
+          <div class="profile__col">
+            <img src="/assets/images/profile/avatar_placeholder.svg" width="98" height="98" alt="" class="profile__avatar">
+            <div class="profile__rank">
+              <div class="rank rank_diamond">Diamond</div>
+            </div>
+            <div class="profile__name">
+              <span>eterno.graphics</span>
+              <button type="button">
+                <span class="icon icon_edit icon_14"></span>
+                <span class="visually-hidden">Edit username</span>
+              </button>
+            </div>
+            <div class="profile__list-name">Settings</div>
+            <ul class="profile__list">
+              {% set items = [
+                {
+                  icon: "security",
+                  text: "Security",
+                  url: "/profile-security.html"
+                },
+                {
+                  icon: "clock",
+                  text: "Sessions",
+                  url: "/profile-sessions.html"
+                },
+                {
+                  icon: "wallet",
+                  text: "Currencies",
+                  url: "/profile-currencies.html"
+                },
+                {
+                  icon: "settings",
+                  text: "Additional Settings",
+                  url: "/profile-settings.html"
+                }
+              ] %}
+
+              {% for item in items %}
+                <li class="profile__list-item">
+                  <a href="{{ item.url }}" class="profile__link"
+                  {% if page.url == item.url %}
+                    aria-current="true"
+                  {% endif %}
+                  >
+                    <span class="icon-wrapper icon-wrapper_col-profile">
+                      <span class="icon icon_current-color icon_14 icon_{{ item.icon }}"></span>
+                    </span>
+                    <span>{{ item.text }}</span>
+                  </a>
+                </li>
+              {% endfor %}
+            </ul>
+          </div>
+          <div class="profile__content">
+            {{ content | safe }}
+          </div>
+        </div>
+      </div>
+      {% include "components/preference.njk" %}
+    </main>
+    {% include "components/footer.njk" %}
+  </div>
+  {% include "parts/scripts.njk" %}
+</body>
+</html>

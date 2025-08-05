@@ -1,0 +1,140 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+@mixin partner($name) {
+  &_#{$name} {
+    background-image: url('../icons/logos/#{$name}.svg');
+    @content;
+  }
+}
+
+.footer {
+  margin-top: 26px;
+  color: $text-secondary-color;
+  font-size: 12px;
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    position: relative;
+    padding-block: 48px 38px;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, $bg-primary-color, $border-primary-color, $bg-primary-color);
+    }
+  }
+
+  &__col {
+    display: flex;
+    column-gap: 28px;
+  }
+
+  &__content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 22px 44px;
+  }
+
+  &__logo {
+    aspect-ratio: 1;
+    filter: grayscale(1);
+  }
+
+  &__links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px 10px;
+    height: fit-content;
+  }
+
+  &__link {
+    text-decoration: none;
+    color: inherit;
+    transition: color .1s ease-in-out;
+
+    @include hover {
+      text-decoration: underline;
+      color: $text-primary-color;
+    }
+  }
+
+  &__copyright {
+    color: $text-primary-color;
+  }
+
+  &__partners {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 22px;
+  }
+
+  &__partner {
+    display: block;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+
+    @include partner('bitcoin') {
+      width: 85px;
+      height: 18px;
+    };
+    @include partner('litecoin') {
+      width: 73px;
+      height: 21px;
+    };
+    @include partner('ethereum') {
+      width: 85px;
+      height: 21px;
+    };
+    @include partner('tron') {
+      width: 80px;
+      height: 33px;
+    };
+    @include partner('tether') {
+      width: 85px;
+      height: 18px;
+    };
+    @include partner('solana') {
+      width: 85px;
+      height: 23px;
+    };
+    @include partner('monero') {
+      width: 85px;
+      height: 23px;
+    };
+    @include partner('walletconnect') {
+      width: 108px;
+      height: 13px;
+    };
+    @include partner('tor') {
+      width: 34px;
+      height: 20px;
+    };
+  }
+}
+
+@media (width > 724px) {
+  .footer {
+    &__col {
+      &_summary {
+        max-width: 236px;
+      }
+      &_copy {
+        max-width: 226px;
+      }
+      &_links {
+        max-width: 142px;
+      }
+    }
+  }
+}

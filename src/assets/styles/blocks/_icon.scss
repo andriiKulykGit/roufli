@@ -1,0 +1,105 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/functions' as *;
+
+@mixin new-icon($name, $color: #000) {
+  &_#{$name} {
+    mask-image: url('../icons/#{$name}.svg');
+    background-color: #{$color};
+    @content;
+  }
+}
+
+@mixin new-bg-icon($name) {
+  &_#{$name} {
+    background-image: url('../icons/#{$name}.svg');
+    @content;
+  }
+}
+
+@mixin new-size($size) {
+  &_#{$size} {
+    height: #{$size}px;
+    @content;
+  }
+}
+
+.icon {
+  display: inline-block;
+  height: 1rem;
+  aspect-ratio: 1;
+  mask-repeat: no-repeat;
+  mask-size: contain;
+  mask-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+
+  &-wrapper {
+    display: grid;
+    place-items: center;
+    aspect-ratio: 1;
+
+    &_heading {
+      width: 33px;
+      background-color: #191919;
+      border: 1px solid #1E1E1E;
+      border-radius: 6px;
+    }
+
+    &_col-profile {
+      width: 22px;
+      border-radius: 4px;
+      background-color: #292929;
+    }
+
+    &_profile {
+      width: 32px;
+      border-radius: 8px;
+      background-color: #222;
+    }
+  }
+
+  @include new-size(12);
+  @include new-size(14);
+  @include new-size(16);
+  @include new-size(18);
+  @include new-size(20);
+  @include new-size(23);
+  @include new-size(24);
+  @include new-size(25);
+  @include new-size(30);
+
+  @include new-icon('chevron');
+  @include new-icon('info');
+  @include new-icon('copy');
+  @include new-icon('card');
+  @include new-icon('note');
+  @include new-icon('cross');
+  @include new-icon('ranks');
+  @include new-icon('disconnect');
+  @include new-icon('affiliate');
+  @include new-icon('game-history');
+  @include new-icon('transactions');
+  @include new-icon('telegram');
+  @include new-icon('x');
+  @include new-icon('support');
+  @include new-icon('wallet');
+  @include new-icon('plus');
+  @include new-icon('people');
+  @include new-icon('edit');
+  @include new-icon('planet');
+  @include new-icon('security');
+  @include new-icon('settings');
+  @include new-icon('clock');
+  @include new-icon('gamepad');
+  @include new-icon('coins');
+
+  @include new-bg-icon('ethereum');
+  @include new-bg-icon('hotspot');
+  @include new-bg-icon('hotspot-green');
+  @include new-bg-icon('bitcoin');
+
+  &_current-color {
+    background-color: currentcolor;
+  }
+}

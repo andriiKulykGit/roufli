@@ -1,0 +1,48 @@
+---
+permalink: profile-settings.html
+layout: profile.njk
+title: Profile
+---
+<div class="profile__title">Additional Settings</div>
+<div class="profile__items">
+  {% for item in['Make bets anonymous', 'Hide bet amount', 'Hide bet amount'] %}
+    <label class="profile__item">
+      <div class="profile__left">
+        {{ item }}
+      </div>
+      <div class="profile__right">
+        <div class="switch">
+          <input class="switch__controll visually-hidden" type="checkbox" id="{{ item | slugify }}" name="{{ item | slugify }}">
+          <span class="switch__slider"></span>
+        </div>
+      </div>
+    </label>
+  {% endfor %}
+</div>
+<div class="profile__title">Social media accounts</div>
+<ul class="profile__social-medias">
+  <li>
+    <a href="#" class="profile__social">
+      <div class="profile__social-ava">
+        <span class="icon icon_current-color icon_24 icon_plus"></span>
+      </div>
+      <span class="profile__social-copy">Add</span>
+    </a>
+  </li>
+  <li>
+    <a href="#" class="profile__social">
+      <div class="profile__social-ava">
+        <span class="icon icon_current-color icon_24 icon_x"></span>
+      </div>
+      <span class="profile__social-copy">X (Twitter)</span>
+    </a>
+  </li>
+  <li>
+    <a href="#" class="profile__social">
+      <div class="profile__social-ava profile__social-ava_telegram">
+        <span class="icon icon_current-color icon_24 icon_telegram"></span>
+      </div>
+      <span class="profile__social-copy">Telegram</span>
+    </a>
+  </li>
+</ul>

@@ -1,0 +1,16 @@
+{% from "components/heading.njk" import heading %}
+
+{% macro table(
+  title = ''
+) %}
+  <div class="table-wrapper">
+    {% if title %}
+      <div class="table__heading">
+        {{ heading(
+          title = title,
+          icon = 'icon_hotspot'
+        ) }}
+      </div>
+    {% endif %}
+  </div>
+{% endmacro %}

@@ -1,0 +1,23 @@
+:root {
+  --container-padding: 15px;
+  --container-width: 1200px;
+  --container-header-width: 1306px;
+  --container-preference-width: 1042px;
+  --accent-color: #E81C5A;
+  --bg-primary-color: #0E0E0E;
+  --bg-secondary-color: #161616;
+  --bg-primary-color: #121212;
+  --border-primary-color: #1F1F1F;
+  --text-primary-color: #fff;
+  --text-secondary-color: #545454;
+}
+
+$container-padding: var(--container-padding);
+$container-width: var(--container-width);
+$accent-color: var(--accent-color);
+$bg-primary-color: var(--bg-primary-color);
+$bg-secondary-color: var(--bg-secondary-color);
+$bg-primary-color: var(--bg-primary-color);
+$border-primary-color: var(--border-primary-color);
+$text-primary-color: var(--text-primary-color);
+$text-secondary-color: var(--text-secondary-color);

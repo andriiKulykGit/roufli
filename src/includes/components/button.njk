@@ -1,0 +1,23 @@
+{% macro button(
+  text = '',
+  href = '#',
+  modifier = '',
+  tag = 'button',
+  iconPrepend,
+  iconAppend,
+  type = 'button'
+) %}
+  <button class="btn ">
+    {% if iconPrepend %}
+      <span class="button__icon button__icon_prepend">
+        <span class="icon icon_25 icon_{{ iconPrepend }}"></span>
+      </span>
+    {% endif %}
+    {{ text }}
+    {% if iconAppend %}
+      <span class="button__icon button__icon_append">
+        <span class="icon icon_25 icon_{{ iconAppend }}"></span>
+      </span>
+    {% endif %}
+  </button>
+{% endmacro %}
