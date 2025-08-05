@@ -64,11 +64,14 @@
   @include new-size(16);
   @include new-size(18);
   @include new-size(20);
+  @include new-size(22);
   @include new-size(23);
   @include new-size(24);
   @include new-size(25);
   @include new-size(30);
 
+  @include new-icon('play');
+  @include new-icon('game-preview');
   @include new-icon('link');
   @include new-icon('chevron');
   @include new-icon('info');

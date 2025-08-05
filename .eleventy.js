@@ -6,6 +6,9 @@ export default function (eleventyConfig) {
   // Static files
   eleventyConfig.addPassthroughCopy('src/assets/fonts')
   eleventyConfig.addPassthroughCopy('src/assets/images/bg-preference.svg')
+  eleventyConfig.addPassthroughCopy('src/assets/images/homepage/bg.png')
+  eleventyConfig.addPassthroughCopy('src/assets/images/homepage/safe.png')
+  eleventyConfig.addPassthroughCopy('src/assets/images/homepage/star.png')
 
   eleventyConfig.setServerOptions({
     showAllHosts: true,

@@ -14,10 +14,9 @@
     }
   }
 
-  &__menu {
-  }
-
   &__inner {
+    position: relative;
+    z-index: 2;
     display: flex;
     column-gap: 20px;
     align-items: center;
@@ -201,7 +200,7 @@
 
     &__logo {
       &-img {
-        width: 46px;
+        width: 42px;
       }
     }
   }

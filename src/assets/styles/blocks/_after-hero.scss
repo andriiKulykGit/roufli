@@ -1,0 +1,115 @@
+@use '../abstracts/variables' as *;
+
+.after-hero {
+  transform: translateY(-50%);
+  margin-bottom: 60px;
+
+  &__inner {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    justify-content: space-between;
+    background-color: #111;
+    border: 1px solid #212121;
+    padding: 34px 40px;
+    border-radius: 15px;
+  }
+
+  &__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    margin-bottom: 4px;
+  }
+
+  &__tag {
+    padding: 5px;
+    color: #fff;
+    background-color: $accent-color;
+    border-radius: 5px;
+    line-height: 1;
+    font-size: 8px;
+    font-weight: 500;
+  }
+
+  &__title {
+    font-weight: 500;
+    font-size: 35px;
+    margin-bottom: 2px;
+    line-height: 1;
+  }
+
+  &__subtitle {
+    color: #6C6C6C;
+    line-height: 1;
+    font-size: 21px;
+  }
+
+  &__col {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  &__img {
+    position: absolute;
+    left: 50%;
+    bottom: 12px;
+    width: 190px;
+    height: 172px;
+    background: url('../images/homepage/safe.png') center/cover no-repeat;
+
+    &::before {
+      position: absolute;
+      content: '';
+      background: url('../images/homepage/safe.png') center/cover no-repeat;
+      width: 42px;
+      height: 38px;
+      filter: blur(2px);
+      transform: rotate(-35deg);
+      top: 10%;
+      right: 110%;
+    }
+
+    &::after {
+      position: absolute;
+      content: '';
+      background: url('../images/homepage/safe.png') center/cover no-repeat;
+      width: 69px;
+      height: 62px;
+      left: 100%;
+      top: 100%;
+      transform: rotate(35deg) translate(-20%, -60%);
+      filter: blur(2px);
+    }
+  }
+}
+
+@media screen and (width < 1000px) {
+  .after-hero {
+    &__img {
+      display: none;
+    }
+  }
+}
+
+@media screen and (width < 756px) {
+  .after-hero {
+    margin-bottom: 0;
+
+    &__inner {
+      padding: 24px;
+      flex-direction: column;
+    }
+  }
+
+  .btn {
+    &_after-hero {
+      display: inline-flex;
+      width: fit-content;
+      font-size: 18px;
+      padding: 8px 12px;
+    }
+  }
+}

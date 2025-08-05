@@ -1,0 +1,24 @@
+.game-preview {
+  display: inline-grid;
+  column-gap: 6px;
+  line-height: 1.2;
+  grid-template-columns: 22px auto;
+
+  &__avatar {
+    display: flex;
+    align-items: center;
+    grid-row: span 2;
+    color: #2b2b2b;
+  }
+
+  &__title {
+    color: #fff;
+    font-size: 12px;
+    font-weight: 500;
+  }
+
+  &__subtitle {
+    font-size: 9px;
+    color: #545454;
+  }
+}

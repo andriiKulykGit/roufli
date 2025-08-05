@@ -1,5 +1,110 @@
+@use '../abstracts/mixins' as *;
+
 .table {
+  --padding-inline: 46px;
+
+  font-size: 10px;
+  width: 100%;
+  text-align: left;
+  background-color: #121212;
+  table-layout: fixed;
+  min-width: 980px;
+
   &__heading {
     margin-bottom: 20px;
+  }
+
+  &__tabs {
+    display: flex;
+    gap: 12px 16px;
+    flex-wrap: wrap;
+  }
+
+  &__tab {
+    font-weight: 500;
+    font-size: 12px;
+    color: #545454;
+    transition: color 0.1s ease-in-out;
+
+    @include hover {
+      color: #fff;
+    }
+  }
+
+  &-header {
+    --padding-inline: 46px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+    justify-content: space-between;
+    border: 1px solid #242424;
+    border-radius: 20px 20px 0 0;
+    overflow-x: auto;
+    background-color: #121212;
+    padding: 26px var(--padding-inline);
+    border-bottom: 0;
+  }
+
+  &-wrapper {
+    border: 1px solid #242424;
+    border-radius: 0 0 20px 20px;
+    overflow-x: auto;
+    border-top: none;
+  }
+
+  th, td {
+    padding: 8px;
+    vertical-align: middle;
+
+    &:first-child {
+      padding-left: var(--padding-inline);
+    }
+
+    &:last-child {
+      text-align: right;
+      padding-right: var(--padding-inline);
+    }
+  }
+
+  tr {
+    border-top: 1px solid #242424;
+  }
+}
+
+.live {
+  position: relative;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 500;
+  color: #fff;
+
+  &:before {
+    display: inline-block;
+    content: '';
+    width: 8px;
+    aspect-ratio: 1;
+    background-color: #36a764;
+    border-radius: 50%;
+    margin-right: 4px;
+    outline: 1px solid #36a764;
+    outline-offset: 1px;
+  }
+}
+
+
+@media screen and (width < 1000px) {
+  .table {
+    min-width: 660px;
+    table-layout: auto;
+  }
+}
+
+@media screen and (width < 756px) {
+  .table {
+    --padding-inline: 24px;
+
+    &-header {
+      --padding-inline: 24px;
+    }
   }
 }

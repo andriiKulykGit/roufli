@@ -1,0 +1,80 @@
+.star {
+  display: block;
+  position: absolute;
+  background: url('../images/homepage/star.png') center/contain no-repeat;
+  aspect-ratio: 1;
+  pointer-events: none;
+  max-width: 100%;
+  z-index: 2;
+
+  &_1 {
+    left: 0;
+    top: 94px;
+    width: 300px;
+    transform: translateX(-50%);
+  }
+
+  &_2 {
+    top: 160px;
+    right: 160px;
+    width: 308px;
+  }
+
+  &_3 {
+    top: 250px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 720px;
+  }
+
+  &_4 {
+    left: 0;
+    top: 0;
+    transform: translate(-50%, -50%);
+    width: 508px;
+  }
+
+  &_5 {
+    top: 50px;
+    left: 100%;
+    transform: translateX(-5%);
+    width: 232px;
+  }
+
+  &_6 {
+    bottom: -40%;
+    left: 100%;
+    transform: translateX(-50%);
+    width: 860px;
+  }
+
+  &_7 {
+    left: 0;
+    bottom: 0;
+    transform: translate(-40%, 20%);
+    width: 292px;
+  }
+}
+
+
+@media screen and (width < 1480px) {
+  .star {
+    &_5 {
+      transform: translateX(-56%);
+    }
+  }
+}
+
+@media screen and (width < 1300px) {
+  .star {
+    &_6, &_7, &_5 {
+      display: none;
+    }
+  }
+}
+
+@media screen and (width < 980px) {
+  .star {
+    display: none;
+  }
+}
