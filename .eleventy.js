@@ -5,6 +5,8 @@ export default function (eleventyConfig) {
 
   // Static files
   eleventyConfig.addPassthroughCopy('src/assets/fonts')
+  eleventyConfig.addPassthroughCopy('src/assets/images/logo.svg')
+  eleventyConfig.addPassthroughCopy('src/assets/images/logo-footer.svg')
   eleventyConfig.addPassthroughCopy('src/assets/images/bg-preference.svg')
   eleventyConfig.addPassthroughCopy('src/assets/images/homepage/bg.png')
   eleventyConfig.addPassthroughCopy('src/assets/images/homepage/safe.png')

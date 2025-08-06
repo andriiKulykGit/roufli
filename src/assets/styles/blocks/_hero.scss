@@ -1,3 +1,5 @@
+@use '../abstracts/variables' as *;
+
 .hero {
   position: relative;
   border-bottom: 1px solid #242424;
@@ -28,7 +30,7 @@
     gap: 18px;
     font-size: 10px;
     line-height: 1.2;
-    margin-top: -60px;
+    margin-top: 120px;
   }
 
   &__tag {
@@ -40,8 +42,25 @@
     border-radius: 5px;
   }
 
+  &__title {
+    font-weight: 700;
+    font-size: clamp(89px, 28vw, 196px);
+    font-family: DrukCyr;
+    line-height: 0.9;
+    margin-top: -24px;
+    background: -webkit-linear-gradient(#FFF2F6, #999194);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
   &__subtitle {
-    transform: translateY(-40%);
+    font-family: Ballet;
+    font-size: clamp(56px, 17vw, 123px);
+    line-height: 1;
+    margin-top: -40px;
+    margin-left: 36px;
+    color: $accent-color;
+    word-spacing: -20px;
   }
 
   &-table {
@@ -66,10 +85,6 @@
 
 @media screen and (width < 480px) {
   .hero {
-    &__subtitle {
-      margin-bottom: 32px;
-    }
-
     &__inner {
       padding-top: 60px;
     }

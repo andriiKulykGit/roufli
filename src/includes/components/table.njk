@@ -15,39 +15,47 @@
     <div class="live">live</div>
     <div class="table__tabs" role="tablist">
       {% for item in ['MY BETS', 'ALL BETS', 'HIGH ROLLERS', 'COOL MOMENTS'] %}
-        <button class="table__tab" type="button" role="tab">{{ item }}</button>
+        <button class="table__tab" type="button" role="tab" id="table-tab-{{ loop.index }}" aria-controls="table-tabpanel-{{ loop.index }}"
+        {% if loop.first %}
+          aria-selected="true"
+        {% endif %}>{{ item }}</button>
       {% endfor %}
     </div>
   </div>
   <div class="table-wrapper">
-    <table class="table">
-      <thead>
-        <tr>
-          {% for item in ['GAME', 'USER', 'TIME', 'AMOUNT', 'COEFFICIENT', 'PAYOUT'] %}
-            <th>{{ item }}</th>
-          {% endfor %}
-        </tr>
-      </thead>
-      <tbody>
-        {% for item in range(0, 10) %}
+    {% for item in range(0, 4) %}
+      <table class="table" role="tabpanel" aria-labelledby="table-tab-{{ loop.index }}" id="table-tabpanel-{{ loop.index }}"
+      {% if not loop.first %}
+          hidden
+        {% endif %}>
+        <thead>
           <tr>
-            <td>
-              <span class="game-preview">
-                <span class="game-preview__avatar">
-                  <span class="icon icon_22 icon_game-preview icon_current-color"></span>
-                </span>
-                <div class="game-preview__title">Roulette</div>
-                <div class="game-preview__subtitle">View</div>
-              </span>
-            </td>
-            {% for item in ['***fsdfsd545hh', '4:20', '0.06$', '0.08x', '0.12$'] %}
-              <td {% if loop.last %}
-                style="color:#36A764"
-              {% endif %}>{{ item }}</td>
+            {% for item in ['GAME', 'USER', 'TIME', 'AMOUNT', 'COEFFICIENT', 'PAYOUT'] %}
+              <th>{{ item }}</th>
             {% endfor %}
           </tr>
-        {% endfor %}
-      </tbody>
-    </table>
+        </thead>
+        <tbody>
+          {% for item in range(0, 12) %}
+            <tr>
+              <td>
+                <span class="game-preview">
+                  <span class="game-preview__avatar">
+                    <span class="icon icon_22 icon_game-preview icon_current-color"></span>
+                  </span>
+                  <span class="game-preview__title">Roulette</span>
+                  <span class="game-preview__subtitle">View</span>
+                </span>
+              </td>
+              {% for item in ['***fsdfsd545hh', '4:20', '0.06$', '0.08x', '0.12$'] %}
+                <td {% if loop.last %}
+                  style="color:#36A764"
+                {% endif %}>{{ item }}</td>
+              {% endfor %}
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    {% endfor %}
   </div>
 {% endmacro %}

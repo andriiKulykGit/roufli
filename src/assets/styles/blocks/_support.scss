@@ -3,9 +3,10 @@
 .support {
   position: fixed;
   bottom: var(--container-padding);
-  left: var(--container-padding);
+  right: var(--container-padding);
   display: flex;
   column-gap: 4px;
+  z-index: 2;
 
   &__btn {
     display: grid;

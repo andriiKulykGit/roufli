@@ -2,7 +2,7 @@
 	@font-face {
 		font-family: Gotham;
 		font-display: swap;
-		src: local("Roboto"), url("../fonts/Gotham-#{$weight}.woff2") format("woff2");
+		src: local("Gotham"), url("../fonts/Gotham-#{$weight}.woff2") format("woff2");
 		font-weight: $size;
 		font-style: normal;
 	}
@@ -11,3 +11,19 @@
 @include font(400, "Regular");
 @include font(500, "Medium");
 @include font(700, "Bold");
+
+@font-face {
+  font-family: Ballet;
+  font-display: swap;
+  src: local("Ballet"), url("../fonts/Ballet-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: DrukCyr;
+  font-display: swap;
+  src: local("DrukCyr"), url("../fonts/DrukCyr-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+}

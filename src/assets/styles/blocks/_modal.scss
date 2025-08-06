@@ -40,6 +40,8 @@
     margin: var(--container-padding);
     overflow-y: auto;
     max-height: calc(100dvh - var(--container-padding) * 2);
+    scrollbar-color: $accent-color #0000;
+    scrollbar-width: thin;
 
     @starting-style {
       transform: translateY(1rem);

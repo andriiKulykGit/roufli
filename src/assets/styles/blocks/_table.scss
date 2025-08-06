@@ -3,12 +3,21 @@
 .table {
   --padding-inline: 46px;
 
+  position: relative;
   font-size: 10px;
   width: 100%;
   text-align: left;
   background-color: #121212;
   table-layout: fixed;
   min-width: 980px;
+
+  &::before {
+    position: absolute;
+    inset: 0;
+    content: '';
+    background: linear-gradient(0, #121212, #0000);
+    pointer-events: none;
+  }
 
   &__heading {
     margin-bottom: 20px;
@@ -29,6 +38,10 @@
     @include hover {
       color: #fff;
     }
+
+    &[aria-selected="true"] {
+      color: #fff;
+    }
   }
 
   &-header {
@@ -46,10 +59,12 @@
   }
 
   &-wrapper {
+    position: relative;
     border: 1px solid #242424;
     border-radius: 0 0 20px 20px;
-    overflow-x: auto;
+    overflow: auto;
     border-top: none;
+    max-height: 514px;
   }
 
   th, td {

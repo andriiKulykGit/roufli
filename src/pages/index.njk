@@ -4,6 +4,8 @@ layout: main-without-login.njk
 title: Homepage
 ---
 
+{% include "components/support.njk" %}
+
 {% from "components/table.njk" import table %}
 
 <div class="hero">
@@ -16,14 +18,14 @@ title: Homepage
           <div class="hero__tag">{{ item }}</div>
         {% endfor %}
       </div>
-      <img src="/assets/images/homepage/title.png" alt="" class="hero__title" fetchpriority="high" loading="eager">
-      <img src="/assets/images/homepage/subtitle.png" alt="" class="hero__subtitle" fetchpriority="high" loading="eager">
+      <div class="hero__title">TRY FUTURE</div>
+      <div class="hero__subtitle">Defi Gaming</div>
       <div class="hero__footer">
         <a href="#" class="btn btn_hero">
           <span class="btn__prepend">
             <span class="icon icon_play icon_current-color icon_20"></span>
           </span>
-          <div class="btn__text">PLAY NOW</div>
+          <span class="btn__text">PLAY NOW</span>
         </a>
         <p class="hero__footer__label">POWERED<br>BY WALLET CONNECT</p>
       </div>
