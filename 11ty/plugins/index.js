@@ -4,6 +4,7 @@ import eleventyRev from 'eleventy-plugin-rev'
 import { scss } from './scss.js'
 import { images } from './images.js'
 import { htmlMinimize } from './htmlMinimize.js'
+import { htmlPrettier } from './htmlPrettify.js'
 
 
 export function plugins(eleventyConfig) {
@@ -12,5 +13,6 @@ export function plugins(eleventyConfig) {
 
   scss(eleventyConfig)
   images(eleventyConfig)
-  htmlMinimize(eleventyConfig)
+  htmlPrettier(eleventyConfig)
+  // htmlMinimize(eleventyConfig)
 }
