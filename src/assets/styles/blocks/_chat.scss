@@ -24,8 +24,19 @@
   }
 
   &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     border-bottom: 1px solid #242424;
     padding-bottom: 10px;
+
+    select.visually-hidden {
+      top: auto;
+      right: auto;
+      background-color: inherit;
+      font-size: 12px;
+      color: inherit;
+    }
   }
 
   &__body {
@@ -95,6 +106,24 @@
     @include hover {
       background-color: #fff;
       color: #414141;
+    }
+  }
+
+  &__select {
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+    column-gap: 4px;
+    padding: 6px 10px;
+    background-color: #242424;
+    border: 1px solid #262626;
+    color: #fff;
+    font-size: 12px;
+    border-radius: 8px;
+    cursor: pointer;
+
+    &-flag {
+      display: flex;
     }
   }
 }
