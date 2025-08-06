@@ -39,9 +39,8 @@
                   <button
                     type="button"
                     class="btn btn_balance"
-                    class="btn"
-                    aria-haspopup="dialog"
-                    aria-controls="deposit-modal">
+                    id="deposit"
+                    >
                     <span class="btn__prepend">
                       <span class="icon icon_current-color icon_wallet icon_14"></span>
                     </span>
@@ -121,4 +120,31 @@
       </ul>
     </div>
   </template>
+  {% if isLogined %}
+    <template id="deposit-dropdown">
+      <div class="dropdown">
+        <ul class="dropdown__list">
+          <li>
+            <button type="button" class="dropdown__link" aria-haspopup="dialog" aria-controls="deposit-modal" data-target-tabpanel="tabpanel-modal-deposit">
+              <span class="icon icon_current-color icon_12 icon_deposit"></span>
+              <span>Deposit</span>
+            </button>
+          </li>
+          <li>
+            <button type="button" class="dropdown__link" aria-haspopup="dialog" aria-controls="deposit-modal" data-target-tabpanel="tabpanel-modal-withdraw">
+              <span class="icon icon_current-color icon_12 icon_withdraw"></span>
+              <span>Withdraw</span>
+            </button>
+          </li>
+          <li>
+            <button type="button" class="dropdown__link">
+              <span class="icon icon_current-color icon_12 icon_vault"></span>
+              <span>Vault</span>
+              <span class="dropdown__label">In development...</span>
+            </button>
+          </li>
+        </ul>
+      </div>
+    </template>
+  {% endif %}
 {% endmacro %}

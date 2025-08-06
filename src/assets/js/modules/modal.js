@@ -1,4 +1,4 @@
-import { $, on } from '../helpers/dom.js'
+import { $, on, getSiblings } from '../helpers/dom.js'
 
 export const init = () => {
   on(document, 'click', (e) => {
@@ -9,6 +9,22 @@ export const init = () => {
       const targetModal = document.getElementById(targetID)
       if (targetModal) {
         targetModal.showModal()
+
+        var targetTabpanelID = openButton.getAttribute('data-target-tabpanel')
+        if (targetTabpanelID) {
+          var targetTabpanel = $(`#${targetTabpanelID}`, targetModal)
+          var targetTab = $(`[aria-controls="${targetTabpanelID}"]`)
+
+          getSiblings(targetTabpanel).forEach(panel => {
+            panel.setAttribute('hidden', '')
+          })
+          targetTabpanel.removeAttribute('hidden')
+
+          getSiblings(targetTab).forEach(tab => {
+            tab.setAttribute('aria-selected', 'false')
+          })
+          targetTab.setAttribute('aria-selected', 'true')
+        }
       }
     }
 
@@ -20,11 +36,11 @@ export const init = () => {
     }
   })
 
-  on($('#toggle-chat'), 'click', (e)=> {
+  on($('#toggle-chat'), 'click', (e) => {
     $('#wrapper').classList.toggle('is-active')
   })
 
-  on($('#close-chat'), 'click', (e)=> {
+  on($('#close-chat'), 'click', (e) => {
     $('#wrapper').classList.remove('is-active')
   })
 }

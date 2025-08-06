@@ -113,6 +113,9 @@
   @include new-icon('star', #E9A443);
   @include new-icon('poker-chip');
   @include new-icon('chevron');
+  @include new-icon('deposit');
+  @include new-icon('vault');
+  @include new-icon('withdraw');
   @include new-icon('chevron-right') {
     mask-image: url('../icons/chevron.svg');
     rotate: -90deg;
