@@ -49,6 +49,10 @@ img {
   font-weight: 500;
 }
 
+.bold {
+  font-weight: 700;
+}
+
 @media screen and (width < 1348px) {
   .wrapper {
     &_game {

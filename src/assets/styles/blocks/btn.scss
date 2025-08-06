@@ -74,6 +74,37 @@
     }
   }
 
+  &_green {
+    background-color: #69ec5d;
+    color: #193517;
+    transition: background-color .1s ease-in-out;
+
+    @include hover {
+      background-color: #53bd49;
+    }
+  }
+
+  &_pink {
+    background-color: $accent-color;
+    color: #fff;
+    transition: background-color .1s ease-in-out;
+
+    @include hover {
+      background-color: #c2174a;
+    }
+  }
+
+  &_sm {
+    font-weight: 500;
+    font-size: 15px;
+    padding: 14px 32px;
+    border-radius: 10px;
+  }
+
+  &_center {
+    margin-inline: auto;
+  }
+
   &_header {
     display: flex;
     column-gap: 5px;

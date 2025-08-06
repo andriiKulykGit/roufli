@@ -1,0 +1,160 @@
+<dialog id="review-modal" class="modal" open>
+  <div class="modal__wrapper">
+    <div class="modal__header">
+      <div class="modal__tabs" role="tablist">
+        <button
+          class="modal__tab"
+          id="tab-modal-review"
+          type="button"
+          role="tab"
+          aria-selected="true"
+          aria-controls="tabpanel-modal-review"
+        >Review</button>
+        <button
+          class="modal__tab"
+          id="tab-modal-income"
+          type="button"
+          role="tab"
+          aria-controls="tabpanel-modal-income"
+        >Income</button>
+        <button
+          class="modal__tab"
+          id="tab-modal-compaigns"
+          type="button"
+          role="tab"
+          aria-controls="tabpanel-modal-compaigns"
+        >Compaigns</button>
+        <button
+          class="modal__tab"
+          id="tab-modal-invite-friends"
+          type="button"
+          role="tab"
+          aria-controls="tabpanel-modal-invite-friends"
+        >Invite friends</button>
+      </div>
+      <form method="dialog">
+        <button class="modal__close" type="submit">
+          <span class="icon icon_cross icon_24 icon_current-color"></span>
+          <span class="visually-hidden">close modal window</span>
+        </button>
+      </form>
+    </div>
+    <div class="modal__body">
+      <div class="modal__tabpanel" id="tabpanel-modal-review" role="tabpanel" aria-labelledby="tab-modal-review">
+        <div class="modal__subtitle">Invite friends</div>
+        <p class="modal__copy">
+          Invite your friends to <span class="bold">RoulFI</span> and increase your earnings.
+          <br><br>
+          If you have special offers for cooperation or access to a wide audience, we are
+          open to discussing individual terms of the affiliate program.
+          <br><br>
+          For any questions regarding the affiliate program, please contact our manager
+          via email: <a href="mailto:support@support.com">support@support.com</a>
+        </p>
+        <div class="modal__subtitle">Send an invitation to your friends</div>
+        <ul class="modal__socials">
+          {% set items = [
+            {
+              text: 'X (Twitter)',
+              color: '#252525',
+              icon: 'x'
+            },
+            {
+              text: 'Telegram',
+              color: '#009AC5',
+              icon: 'telegram'
+            },
+            {
+              text: 'Facebook',
+              color: '#5068A8',
+              icon: 'fb',
+              size: '52'
+            },
+            {
+              text: 'VK',
+              color: '#0066C5',
+              icon: 'vk',
+              size: '28'
+            },
+            {
+              text: 'OK',
+              color: '#FF8929',
+              icon: 'ok'
+            },
+            {
+              text: 'Reddit',
+              color: '#FE5301',
+              icon: 'reddit'
+            },
+            {
+              text: 'Mail',
+              color: '#0087FA',
+              icon: 'mail'
+            },
+            {
+              text: 'Linkedin',
+              color: '#0080AD',
+              icon: 'linkedin'
+            }
+          ] %}
+          {% for item in items %}
+            <li>
+              <a href="#" target="_blank" rel="nofollow noreffer" class="modal__social">
+                <span class="modal__social-icon" style="background: {{ item.color }}">
+                  <span class="icon icon_{{ item.size | default(24) }} icon_current-color icon_{{ item.icon }}"></span>
+                </span>
+                <span class="modal__social-copy">
+                  {{ item.text }}
+                </span>
+              </a>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+      <div class="modal__tabpanel" hidden id="tabpanel-modal-income" role="tabpanel" aria-labelledby="tab-modal-income">
+        <div class="modal__income">
+          <div class="modal__income-col">
+            <div>My income</div>
+          </div>
+          <div class="modal__income-col">
+            <div>Campaigns</div>
+            <select class="modal__income-select">
+              <option>All</option>
+              <option>All 2</option>
+              <option>All 3</option>
+            </select>
+          </div>
+        </div>
+        <a href="#" class="btn btn_sm btn_center btn_green">Take earnings</a>
+      </div>
+      <div class="modal__tabpanel" hidden id="tabpanel-modal-compaigns" role="tabpanel" aria-labelledby="tab-modal-compaigns">
+        <div class="modal__income modal__income_campaigns">
+          <div class="modal__income-col">
+            <div class="modal__income-text">#1</div>
+          </div>
+          <div class="modal__income-col">
+            <div class="copy-area">
+              <input type="text" class="copy-area__controll" readonly value="https://cim.io/0ckQpe">
+              <button type="button" class="copy-area__btn" data-copy="https://cim.io/0ckQpe">
+                <span class="visually-hidden">copy link</span>
+                <span class="icon icon_20 icon_copy icon_current-color"></span>
+              </button>
+            </div>
+            <div class="modal__income-select-icon">
+              <label class="icon icon_chevron icon_current-color icon_18" data-for="links"></label>
+              <select id="links" class="visually-hidden">
+                <option>https://cim.io/0ckQpe</option>
+                <option>https://cim.io/0ckQpe 2</option>
+                <option>https://cim.io/0ckQpe 3</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <a href="#" class="btn btn_sm btn_center btn_pink">Create a new campaign</a>
+      </div>
+      <div class="modal__tabpanel" hidden id="tabpanel-modal-invite-friends" role="tabpanel" aria-labelledby="tab-modal-invite-friends">
+        <p>Invite friends</p>
+      </div>
+    </div>
+  </div>
+</dialog>

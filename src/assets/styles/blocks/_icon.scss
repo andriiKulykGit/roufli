@@ -68,7 +68,9 @@
   @include new-size(23);
   @include new-size(24);
   @include new-size(25);
+  @include new-size(28);
   @include new-size(30);
+  @include new-size(52);
 
   @include new-icon('play');
   @include new-icon('game-preview');
@@ -99,6 +101,12 @@
   @include new-icon('coins');
   @include new-icon('gift');
   @include new-icon('send');
+  @include new-icon('ok');
+  @include new-icon('reddit');
+  @include new-icon('mail');
+  @include new-icon('fb');
+  @include new-icon('vk');
+  @include new-icon('linkedin');
   @include new-icon('message');
   @include new-icon('chevron');
   @include new-icon('chevron-right') {

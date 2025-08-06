@@ -24,6 +24,75 @@
     background: rgba(14 14 14 / 90%);
   }
 
+  &__subtitle {
+    font-weight: 500;
+    font-size: 15px;
+    color: #353535;
+    margin-left: 20px;
+    margin-bottom: -10px;
+  }
+
+  &__copy {
+    border-radius: 14px;
+    background-color: #151515;
+    border: 1px solid #2C2C2C;
+    padding: 20px 28px;
+    font-size: 15px;
+    color: #a3a3a3;
+
+    a {
+      font-weight: 500;
+      text-decoration: none;
+      color: #fff;
+
+      @include hover {
+        text-decoration: underline;
+      }
+    }
+
+    .bold {
+      color: #fff;
+    }
+  }
+
+  &__socials {
+    border-radius: 14px;
+    background-color: #151515;
+    border: 1px solid #2C2C2C;
+    padding: 20px 28px;
+    gap: 18px 24px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  }
+
+  &__social {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    row-gap: 10px;
+    transition: background-color .1s ease-in-out;
+    border-radius: 18px;
+    background-color: #151515;
+    border: 1px solid #2C2C2C;
+    aspect-ratio: 1;
+    text-decoration: none;
+    color: inherit;
+    font-size: 11px;
+
+    &-icon {
+      width: 52px;
+      aspect-ratio: 1;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+    }
+
+    @include hover {
+      background-color: #1e1e1e;
+    }
+  }
+
   &__wrapper {
     position: relative;
     width: 100%;
@@ -70,6 +139,11 @@
   &__tabs {
     display: flex;
     column-gap: 40px;
+    white-space: nowrap;
+    overflow: auto;
+    scrollbar-color: $accent-color #0000;
+    scrollbar-width: thin;
+    height: 24px;
   }
 
   &__note {
@@ -194,6 +268,49 @@
 
     @include hover {
       background-color: #2c2c2c;
+    }
+  }
+
+  &__income {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: space-between;
+    padding: 14px 20px;
+    border: 1px solid #2C2C2C;
+    background-color: #151515;
+    border-radius: 14px;
+    font-size: 20px;
+    color: #fff;
+    line-height: 1;
+
+    &_campaigns {
+      font-size: 15px;
+    }
+
+    &-col {
+      display: flex;
+      align-items: center;
+      column-gap: 10px;
+    }
+
+    &-select {
+      color: inherit;
+      font-size: 14px;
+      background-color: #151515;
+      border: 1px solid #2C2C2C;
+      border-radius: 6px;
+      padding: 5px 12px;
+      padding-right: 4px;
+
+      &-icon {
+        select {
+          color: inherit;
+          background-color: inherit;
+          font-size: inherit;
+        }
+      }
     }
   }
 }
