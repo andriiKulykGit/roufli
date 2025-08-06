@@ -43,6 +43,22 @@ export const init = () => {
     tippy('#deposit', {
       content: container,
       allowHTML: true,
+      trigger: 'mouseenter',
+      placement: 'bottom-end',
+      arrow: false,
+      animation: 'shift-away',
+      interactive: true,
+    })
+  }
+
+  var connectElement = $('#connect-dropdown')
+  if (connectElement) {
+    const container = document.createElement('div')
+    container.appendChild(document.importNode(connectElement.content, true))
+
+    tippy('#connect-wallet-trigger', {
+      content: container,
+      allowHTML: true,
       trigger: 'click',
       placement: 'bottom-end',
       arrow: false,

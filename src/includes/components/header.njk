@@ -55,12 +55,12 @@
               </a>
             </span>
           {% else %}
-            <a href="#" class="btn btn_header">
+            <button type="button" class="btn btn_header" id="connect-wallet-trigger">
               <span class="btn__prepend">
                 <span class="icon icon_link icon_current-color icon_14"></span>
               </span>
               <span class="btn__text">CONNECT TO GAME</span>
-            </a>
+            </button>
           {% endif %}
           <button type="button" class="burger">
             <span></span>
@@ -144,6 +144,81 @@
             </button>
           </li>
         </ul>
+      </div>
+    </template>
+  {% else %}
+    <template id="connect-dropdown">
+      <div class="connect">
+        <div class="connect__title">Connect a Wallet</div>
+        <div class="connect__actions">
+          <div class="connect__tabs" role="tablist">
+            <button type="button" class="connect__tab" role="tab" aria-controls="connect-tabpanel-1" aria-selected="true">all</button>
+            <button type="button" class="connect__tab" role="tab" aria-controls="connect-tabpanel-2" aria-selected="false">eth</button>
+            <button type="button" class="connect__tab" role="tab" aria-controls="connect-tabpanel-3" aria-selected="false">usdt</button>
+            <button type="button" class="connect__tab" role="tab" aria-controls="connect-tabpanel-4" aria-selected="false">ton</button>
+          </div>
+          <label class="connect__search">
+            <span class="connect__search-icon">
+              <span class="icon icon_search icon_8 icon_current-color"></span>
+            </span>
+            <input type="text" class="connect__controll" placeholder="Search">
+          </label>
+        </div>
+        <div>
+          {% for item in range(0, 4) %}
+            <div role="tabpanel"
+                id="connect-tabpanel-{{ loop.index }}"
+                {% if not loop.first %}
+                  hidden
+                {% endif %}>
+              <div class="connect__items">
+                {% set items = [
+                  {
+                    icon: 'wallet-connect',
+                    text: 'Wallet Connect'
+                  },
+                  {
+                    icon: 'metamask',
+                    text: 'Metamask',
+                    size: '22'
+                  },
+                  {
+                    icon: 'monero',
+                    text: 'monero',
+                    size: '24'
+                  },
+                  {
+                    icon: 'rabby',
+                    text: 'Rabby'
+                  },
+                  {
+                    icon: 'phantom',
+                    text: 'phantom',
+                    size: '24'
+                  },
+                  {
+                    icon: 'trust-wallet',
+                    text: 'trust wallet'
+                  },
+                  {
+                    icon: 'safepal',
+                    text: 'SafePal',
+                    size: '22'
+                  }
+                ] %}
+
+                {% for item in items %}
+                  <button type="button" class="connect__item">
+                    <span class="connect__item-icon">
+                      <span class="icon icon_{{ item.icon }} icon_{{ item.size }}"></span>
+                    </span>
+                    <div class="connect__item-copy">{{ item.text }}</div>
+                  </button>
+                {% endfor %}
+              </div>
+            </div>
+          {% endfor %}
+        </div>
       </div>
     </template>
   {% endif %}
