@@ -1,0 +1,146 @@
+<dialog id="premium-modal" class="modal">
+  <div class="modal__wrapper">
+    <div class="modal__header">
+      <div class="modal__tabs" role="tablist">
+        <button
+          class="modal__tab"
+          id="tab-modal-premium-club"
+          type="button"
+          role="tab"
+          aria-selected="true"
+          aria-controls="tabpanel-modal-premium-club"
+        >Premium Club</button>
+        <button
+          class="modal__tab"
+          id="tab-modal-rakeback"
+          type="button"
+          role="tab"
+          aria-controls="tabpanel-modal-rakeback"
+        >Rakeback</button>
+        <button
+          class="modal__tab"
+          id="tab-modal-cashback"
+          type="button"
+          role="tab"
+          aria-controls="tabpanel-modal-cashback"
+        >Cashback</button>
+        <button
+          class="modal__tab"
+          id="tab-modal-boost"
+          type="button"
+          role="tab"
+          aria-controls="tabpanel-modal-boost"
+        >Boost</button>
+      </div>
+      <form method="dialog">
+        <button class="modal__close" type="submit">
+          <span class="icon icon_cross icon_24 icon_current-color"></span>
+          <span class="visually-hidden">close modal window</span>
+        </button>
+      </form>
+    </div>
+    <div class="modal__body">
+      <div class="modal__tabpanel" id="tabpanel-modal-premium-club" role="tabpanel" aria-labelledby="tab-modal-premium-club">
+        <div class="modal__subtitle">Premium Club Progress</div>
+        <div class="modal__level">
+          <div class="modal__level-header">
+            <div class="modal__level-col">
+              <span class="icon icon_star icon_36"></span>
+            </div>
+            <div class="modal__level-col">
+              <div class="modal__level-title">You current level: Unranked</div>
+              <div class="modal__level-subtitle">Progress is calculated based on your wagered amount</div>
+            </div>
+          </div>
+          <input type="text" class="modal__level-controll" readonly value="0.00%">
+          <div class="modal__level-footer">
+            <span>Unranked</span>
+            <span style="color: #9A5935">Bronze</span>
+          </div>
+        </div>
+        <div class="modal__subtitle">Privileges</div>
+        <div class="modal__privileges" role="tablist">
+          {% set items = [
+            {
+              text: 'BRONZE',
+              color: '#AE6C47',
+              gradient: '#C27F5A, #9A5935'
+            },
+            {
+              text: 'SILVER',
+              color: '#E8E8E8',
+              gradient: '#E8E8E8, #B0B0B0'
+            },
+            {
+              text: 'GOLD',
+              color: '#E9A443',
+              gradient: '#E9A443, #BE8433'
+            },
+            {
+              text: 'PLATINUM',
+              color: '#EDE6D9',
+              gradient: '#EDE6D9, #BDB7AB'
+            },
+            {
+              text: 'DIAMOND',
+              color: '#2EE0D1',
+              gradient: '#2EE0D1, #23B1A5'
+            },
+            {
+              text: 'ELITE',
+              color: '#F92F32',
+              gradient: '#F92F32, #BA2022'
+            }
+          ] %}
+          {% for item in items %}
+            <button
+              class="modal__privileges-btn"
+              type="button"
+              role="tab"
+              aria-controls="premium-tabpanel-{{ loop.index }}"
+              id="premium-tab-{{ loop.index }}"
+              style="--color: {{ item.color }}"
+              {% if loop.first %}
+                aria-selected="true"
+              {% endif %}
+              >
+              <span class="icon icon_current-color icon_40 icon_poker-chip" style="background: linear-gradient({{ item.gradient }})"></span>
+              <span class="modal__privileges-text">{{ item.text }}</span>
+            </button>
+          {% endfor %}
+        </div>
+        <div>
+          {% for item in items %}
+            <div class="modal__info"
+              aria-labelledby="premium-tab-{{ loop.index }}"
+              id="premium-tabpanel-{{ loop.index }}"
+              {% if not loop.first %}
+                hidden
+              {% endif %}
+            >
+              <div class="modal__info-tag">
+                <span class="icon icon_current-color icon_24 icon_poker-chip" style="background: linear-gradient({{ item.gradient }})"></span>
+                <div class="modal__info-rank" style="color: {{ item.color }}">{{ item.text }}</div>
+              </div>
+              <ul class="modal__info-list">
+                <li>Set an avatar</li>
+                <li>Set a nickname</li>
+                <li>Access to the general chat</li>
+                <li>Access to the live feed of the overall betting history on the site</li>
+              </ul>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+      <div class="modal__tabpanel" hidden id="tabpanel-modal-rakeback" role="tabpanel" aria-labelledby="tab-modal-rakeback">
+        rakeback
+      </div>
+      <div class="modal__tabpanel" hidden id="tabpanel-modal-cashback" role="tabpanel" aria-labelledby="tab-modal-cashback">
+        cashback
+      </div>
+      <div class="modal__tabpanel" hidden id="tabpanel-modal-boost" role="tabpanel" aria-labelledby="tab-modal-boost">
+        boost
+      </div>
+    </div>
+  </div>
+</dialog>

@@ -70,6 +70,8 @@
   @include new-size(25);
   @include new-size(28);
   @include new-size(30);
+  @include new-size(36);
+  @include new-size(40);
   @include new-size(52);
 
   @include new-icon('play');
@@ -108,6 +110,8 @@
   @include new-icon('vk');
   @include new-icon('linkedin');
   @include new-icon('message');
+  @include new-icon('star', #E9A443);
+  @include new-icon('poker-chip');
   @include new-icon('chevron');
   @include new-icon('chevron-right') {
     mask-image: url('../icons/chevron.svg');
