@@ -59,7 +59,7 @@
     height: 172px;
     background: url('../images/homepage/safe.png') center/cover no-repeat;
 
-    &::before {
+    &:before {
       position: absolute;
       content: '';
       background: url('../images/homepage/safe.png') center/cover no-repeat;
@@ -71,7 +71,7 @@
       right: 110%;
     }
 
-    &::after {
+    &:after {
       position: absolute;
       content: '';
       background: url('../images/homepage/safe.png') center/cover no-repeat;
@@ -86,7 +86,9 @@
 }
 
 @media screen and (width < 1000px) {
+
   .after-hero {
+
     &__img {
       display: none;
     }
@@ -94,6 +96,7 @@
 }
 
 @media screen and (width < 756px) {
+
   .after-hero {
     margin-bottom: -40px;
 
@@ -104,6 +107,7 @@
   }
 
   .btn {
+
     &_after-hero {
       display: inline-flex;
       width: fit-content;

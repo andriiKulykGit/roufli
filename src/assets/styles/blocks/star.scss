@@ -58,7 +58,9 @@
 
 
 @media screen and (width < 1480px) {
+
   .star {
+
     &_5 {
       transform: translateX(-56%);
     }
@@ -66,7 +68,9 @@
 }
 
 @media screen and (width < 1300px) {
+
   .star {
+
     &_6, &_7, &_5 {
       display: none;
     }
@@ -74,6 +78,7 @@
 }
 
 @media screen and (width < 980px) {
+
   .star {
     display: none;
   }

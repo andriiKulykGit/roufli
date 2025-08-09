@@ -74,7 +74,6 @@
   @include new-size(36);
   @include new-size(40);
   @include new-size(52);
-
   @include new-icon('play');
   @include new-icon('game-preview');
   @include new-icon('link');
@@ -119,6 +118,7 @@
   @include new-icon('withdraw');
   @include new-icon('search');
   @include new-icon('chevron-lang', #3A3A3A);
+
   @include new-icon('chevron-right') {
     mask-image: url('../icons/chevron.svg');
     rotate: -90deg;
@@ -129,21 +129,27 @@
   @include new-bg-icon('hotspot');
   @include new-bg-icon('hotspot-green');
   @include new-bg-icon('bitcoin');
+
   @include new-bg-icon('wallet-connect') {
     width: 31px;
     height: 19px;
   };
+
   @include new-bg-icon('metamask');
   @include new-bg-icon('monero');
+
   @include new-bg-icon('rabby') {
     width: 25px;
     height: 22px;
   };
+
   @include new-bg-icon('phantom');
+
   @include new-bg-icon('trust-wallet') {
     width: 22px;
     height: 25px;
   };
+
   @include new-bg-icon('safepal');
 
   &_current-color {

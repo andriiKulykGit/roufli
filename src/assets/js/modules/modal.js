@@ -36,11 +36,11 @@ export const init = () => {
     }
   })
 
-  on($('#toggle-chat'), 'click', (e) => {
+  on($('#toggle-chat'), 'click', () => {
     $('#wrapper').classList.toggle('is-active')
   })
 
-  on($('#close-chat'), 'click', (e) => {
+  on($('#close-chat'), 'click', () => {
     $('#wrapper').classList.remove('is-active')
   })
 }

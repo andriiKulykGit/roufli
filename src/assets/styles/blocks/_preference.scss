@@ -41,7 +41,8 @@
     column-gap: 12px;
 
     &:not(:last-of-type) {
-      &::before {
+
+      &:before {
         content: '';
         position: absolute;
         top: 0;
@@ -56,6 +57,7 @@
 }
 
 @media (width < 980px) {
+
   .preference {
     background-image: none;
 
@@ -66,7 +68,9 @@
 }
 
 @media (width < 768px) {
+
   .preference {
+
     &__list {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -74,15 +78,18 @@
     }
 
     &__item {
+
       &:nth-child(2) {
-        &::before {
+
+        &:before {
           content: none;
         }
       }
 
       &:nth-child(3),
       &:nth-child(4) {
-        &::after {
+
+        &:after {
           content: '';
           position: absolute;
           bottom: 100%;
@@ -98,18 +105,22 @@
 }
 
 @media (width < 480px) {
+
   .preference {
+
     &__list {
       grid-template-columns: 1fr;
     }
 
     &__item {
-      &::before {
+
+      &:before {
         content: none;
       }
 
       &:nth-child(2) {
-        &::after {
+
+        &:after {
           content: '';
           position: absolute;
           bottom: 100%;

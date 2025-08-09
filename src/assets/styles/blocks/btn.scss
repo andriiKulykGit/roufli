@@ -44,7 +44,7 @@
 
     @include hover {
       color: #fff;
-      box-shadow: 0 0 25px 0 rgba(255, 0, 104, 0.5);
+      box-shadow: 0 0 25px 0 rgb(255 0 104 / 50%);
     }
   }
 
@@ -118,7 +118,7 @@
 
     @include hover {
       color: #fff;
-      box-shadow: 0 0 25px 0 rgba(255, 0, 104, 0.5);
+      box-shadow: 0 0 25px 0 rgb(255 0 104 / 50%);
     }
   }
 
@@ -135,7 +135,7 @@
 
     @include hover {
       color: #fff;
-      box-shadow: 0 0 25px 0 rgba(255, 0, 104, 0.5);
+      box-shadow: 0 0 25px 0 rgb(255 0 104 / 50%);
     }
   }
 

@@ -5,6 +5,7 @@
   margin-top: 32px;
 
   &__avatar {
+
     &-img {
       display: block;
       height: 46px;
@@ -62,9 +63,6 @@
   display: flex;
   column-gap: 18px;
 
-  &__item {
-  }
-
   &__link {
     position: relative;
     text-decoration: none;
@@ -88,6 +86,7 @@
     }
 
     @include hover {
+
       &:before {
         transform: scaleX(1);
         transform-origin: left;
@@ -140,13 +139,17 @@
   }
 
   &[aria-expanded='true'] {
+
     span {
+
       &:nth-child(1) {
         transform: rotate(-45deg);
       }
+
       &:nth-child(2) {
         opacity: 0;
       }
+
       &:nth-child(3) {
         transform: rotate(45deg);
       }
@@ -155,12 +158,14 @@
 }
 
 @media screen and (width >= 780px) {
+
   .burger {
     display: none;
   }
 }
 
 @media screen and (width < 780px) {
+
   .menu {
     display: flex;
     flex-direction: column;
@@ -168,6 +173,7 @@
     background-color: #121212;
 
     &__item {
+
       &:not(:last-of-type) {
         border-bottom: 1px solid #262626;
       }
@@ -200,6 +206,7 @@
     }
 
     &__logo {
+
       &-img {
         width: 42px;
       }
@@ -208,6 +215,7 @@
 }
 
 @media screen and (width < 600px) {
+
   .header {
     margin-top: 0;
 
@@ -220,7 +228,9 @@
   .balance {
     padding: 8px;
   }
+
   .container {
+
     &_header {
       display: contents;
     }
@@ -228,7 +238,9 @@
 }
 
 @media screen and (width < 480px) {
+
   .btn {
+
     &_balance {
       padding: 6px;
       aspect-ratio: 1;
@@ -248,7 +260,9 @@
   }
 
   .header {
+
     &__avatar {
+
       &-img {
         width: 42px;
         height: 42px;
@@ -262,7 +276,9 @@
 }
 
 @media screen and (width < 400px) {
+
   .header {
+
     &__online {
       display: none;
     }

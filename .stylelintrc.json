@@ -11,9 +11,13 @@
     "comment-whitespace-inside": "always",
     "comment-empty-line-before": "always",
     "at-rule-no-vendor-prefix": true,
-    "rule-empty-line-before": "always",
     "selector-pseudo-element-colon-notation": "single",
     "selector-no-vendor-prefix": true,
-    "media-feature-name-no-vendor-prefix": true
+    "media-feature-name-no-vendor-prefix": true,
+    "selector-class-pattern": null,
+    "font-family-no-missing-generic-family-keyword": null,
+    "declaration-block-no-duplicate-custom-properties": null,
+    "rule-empty-line-before": null,
+    "no-duplicate-selectors": null
   }
 }

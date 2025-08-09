@@ -35,7 +35,7 @@
 
   &__tag {
     padding: 7px 14px;
-    background-color: rgba($color: #E81C5A, $alpha: 0.3);
+    background-color: rgba($color: #E81C5A, $alpha: 30%);
     color: #e81c5a;
     font-size: 14px;
     line-height: 1;
@@ -48,8 +48,8 @@
     font-family: DrukCyr;
     line-height: 0.9;
     margin-top: -24px;
-    background: -webkit-linear-gradient(#FFF2F6, #999194);
-    -webkit-background-clip: text;
+    background: linear-gradient(#FFF2F6, #999194);
+    background-clip: text;
     -webkit-text-fill-color: transparent;
   }
 
@@ -71,12 +71,14 @@
 
 
 @media screen and (width < 756px) {
+
   .hero {
     min-height: 780px;
   }
 }
 
 @media screen and (width < 600px) {
+
   .hero {
     min-height: 680px;
     padding-top: 80px;
@@ -84,7 +86,9 @@
 }
 
 @media screen and (width < 480px) {
+
   .hero {
+
     &__inner {
       padding-top: 60px;
     }

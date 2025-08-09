@@ -20,7 +20,7 @@
     position: relative;
     padding-block: 48px 38px;
 
-    &::before {
+    &:before {
       content: '';
       position: absolute;
       top: 0;
@@ -88,34 +88,42 @@
       width: 85px;
       height: 18px;
     };
+
     @include partner('litecoin') {
       width: 73px;
       height: 21px;
     };
+
     @include partner('ethereum') {
       width: 85px;
       height: 21px;
     };
+
     @include partner('tron') {
       width: 80px;
       height: 33px;
     };
+
     @include partner('tether') {
       width: 85px;
       height: 18px;
     };
+
     @include partner('solana') {
       width: 85px;
       height: 23px;
     };
+
     @include partner('monero') {
       width: 85px;
       height: 23px;
     };
+
     @include partner('walletconnect') {
       width: 108px;
       height: 13px;
     };
+
     @include partner('tor') {
       width: 34px;
       height: 20px;
@@ -124,14 +132,19 @@
 }
 
 @media (width > 724px) {
+
   .footer {
+
     &__col {
+
       &_summary {
         max-width: 236px;
       }
+
       &_copy {
         max-width: 226px;
       }
+
       &_links {
         max-width: 142px;
       }
