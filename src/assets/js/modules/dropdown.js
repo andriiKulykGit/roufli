@@ -66,4 +66,20 @@ export const init = () => {
       interactive: true,
     })
   }
+
+  var chatElement = $('#chat-dropdown')
+  if (chatElement) {
+    const container = document.createElement('div')
+    container.appendChild(document.importNode(chatElement.content, true))
+
+    tippy('#chat-dropdown-trigger', {
+      content: container,
+      allowHTML: true,
+      trigger: 'click',
+      placement: 'bottom-start',
+      arrow: false,
+      animation: 'shift-away',
+      interactive: true,
+    })
+  }
 }

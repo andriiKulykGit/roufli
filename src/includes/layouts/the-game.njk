@@ -15,7 +15,7 @@
       <div class="chat__inner">
         <div class="chat__header">
           <div>
-            <label class="chat__select" data-for="chat-select">
+            <label class="chat__select" id="chat-dropdown-trigger">
               <span class="chat__select-flag">
                 <span class="icon icon_flag-usa icon_20"></span>
               </span>
@@ -24,11 +24,6 @@
                 <span class="icon icon_chevron-lang icon_8"></span>
               </div>
             </label>
-            <select class="visually-hidden" id="chat-select">
-              <option>Lorem impus</option>
-              <option>Lorem impus2</option>
-              <option>Lorem impus3</option>
-            </select>
           </div>
           <button type="button" class="chat__close" id="close-chat">
             <span class="visually-hidden">hide chat</span>
@@ -64,6 +59,27 @@
     </div>
     {% include "components/support.njk" %}
   </div>
+  <template id="chat-dropdown">
+      <div class="dropdown">
+        <ul class="dropdown__list">
+          <li>
+            <button type="button" class="dropdown__link">
+              <span>Lorem impus</span>
+            </button>
+          </li>
+          <li>
+            <button type="button" class="dropdown__link">
+              <span>Lorem impus</span>
+            </button>
+          </li>
+          <li>
+            <button type="button" class="dropdown__link">
+              <span>Lorem impus</span>
+            </button>
+          </li>
+        </ul>
+      </div>
+    </template>
   {% include "components/popup/deposit.njk" %}
   {% include "components/popup/premium.njk" %}
   {% include "components/popup/review.njk" %}

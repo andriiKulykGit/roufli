@@ -1,4 +1,5 @@
 @use '../abstracts/mixins' as *;
+@use '../abstracts/variables' as *;
 
 .table {
   --padding-inline: 46px;
@@ -11,11 +12,11 @@
   table-layout: fixed;
   min-width: 980px;
 
-  &::before {
+  &:before {
     position: absolute;
     inset: 0;
     content: '';
-    background: linear-gradient(0, #121212, #0000);
+    background: linear-gradient(0deg, #121212, #0000);
     pointer-events: none;
   }
 
@@ -46,6 +47,7 @@
 
   &-header {
     --padding-inline: 46px;
+
     display: flex;
     flex-wrap: wrap;
     gap: 18px;
@@ -63,6 +65,8 @@
     border: 1px solid #242424;
     border-radius: 0 0 20px 20px;
     overflow: auto;
+    scrollbar-color: $accent-color #0000;
+    scrollbar-width: thin;
     border-top: none;
     max-height: 514px;
   }
@@ -108,6 +112,7 @@
 
 
 @media screen and (width < 1000px) {
+
   .table {
     min-width: 660px;
     table-layout: auto;
@@ -115,6 +120,7 @@
 }
 
 @media screen and (width < 756px) {
+
   .table {
     --padding-inline: 24px;
 

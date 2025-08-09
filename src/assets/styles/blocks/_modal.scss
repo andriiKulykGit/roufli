@@ -150,7 +150,7 @@
     column-gap: 8px;
     border-radius: 12px;
     padding: 14px;
-    background-color: rgba($color: #515151, $alpha: 0.2);
+    background-color: rgba($color: #515151, $alpha: 20%);
     color: #7e7e7e;
     font-size: 14px;
 
@@ -159,12 +159,12 @@
     }
 
     &_green {
-      background-color: rgba($color: #69ec5d, $alpha: 0.2);
+      background-color: rgba($color: #69ec5d, $alpha: 20%);
       color: #69ec5d;
     }
 
     &_yellow {
-      background-color: rgba($color: #ffdb95, $alpha: 0.2);
+      background-color: rgba($color: #ffdb95, $alpha: 20%);
       color: #ffdb95;
     }
 
@@ -196,6 +196,7 @@
   }
 
   &__tabpanel {
+
     &:not([hidden]) {
       display: flex;
       flex-direction: column;
@@ -247,7 +248,7 @@
     cursor: pointer;
     transition: background-color 0.1s ease-in-out;
 
-    &::after {
+    &:after {
       content: '';
       display: inline-block;
       width: 22px;
@@ -260,7 +261,7 @@
     &:has(> input[type='radio']:checked) {
       background: linear-gradient(180deg, #1e1e1e 0%, #464646 100%);
 
-      &::after {
+      &:after {
         background-color: #44d27e;
       }
     }
@@ -295,7 +296,7 @@
     }
 
     &-select {
-      color: inherit;
+      color: #fff;
       font-size: 14px;
       background-color: #151515;
       border: 1px solid #2C2C2C;
@@ -303,17 +304,29 @@
       padding: 5px 12px;
       padding-right: 4px;
 
+      option {
+        color: #fff;
+      }
+
       &-icon {
-        select {
+
+        & select {
           color: inherit;
           background-color: inherit;
           font-size: inherit;
+
+          & option {
+            background-color: #151515;
+            color: #fff;
+          }
         }
       }
+
     }
   }
 
   &__level {
+
     &-header {
       display: flex;
       column-gap: 12px;
@@ -437,7 +450,9 @@
 
 
 @media screen and (width < 590px) {
+
   .modal {
+
     &__wrapper {
       padding: 16px
     }
